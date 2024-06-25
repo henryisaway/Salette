@@ -29,6 +29,8 @@ add_executable(Mira
             src/config.cpp
             src/main.cpp
             src/glad.c
+            
+            src/controller/engine.cpp
             )
 
 # Link libraries

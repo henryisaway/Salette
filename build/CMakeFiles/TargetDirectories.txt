@@ -1,0 +1,3 @@
+/home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles/Mira.dir
+/home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles/edit_cache.dir
+/home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles/rebuild_cache.dir
