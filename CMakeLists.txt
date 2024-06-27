@@ -29,8 +29,10 @@ add_executable(Mira
             src/config.cpp
             src/main.cpp
             src/glad.c
-            
+            src/systems/renderSystem.cpp
+            src/shaderapps/shaderapps.cpp
             src/controller/engine.cpp
+            src/controller/test.cpp
             )
 
 # Link libraries

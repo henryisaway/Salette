@@ -111,10 +111,38 @@ CMakeFiles/Mira.dir/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Mira.dir/src/glad.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/henryisaway/Desktop/Lunaria/Mira/src/glad.c -o CMakeFiles/Mira.dir/src/glad.c.s
 
+CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o: CMakeFiles/Mira.dir/flags.make
+CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o: /home/henryisaway/Desktop/Lunaria/Mira/src/systems/renderSystem.cpp
+CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o: CMakeFiles/Mira.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o -MF CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o.d -o CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o -c /home/henryisaway/Desktop/Lunaria/Mira/src/systems/renderSystem.cpp
+
+CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henryisaway/Desktop/Lunaria/Mira/src/systems/renderSystem.cpp > CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.i
+
+CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henryisaway/Desktop/Lunaria/Mira/src/systems/renderSystem.cpp -o CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.s
+
+CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o: CMakeFiles/Mira.dir/flags.make
+CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o: /home/henryisaway/Desktop/Lunaria/Mira/src/shaderapps/shaderapps.cpp
+CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o: CMakeFiles/Mira.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o -MF CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o.d -o CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o -c /home/henryisaway/Desktop/Lunaria/Mira/src/shaderapps/shaderapps.cpp
+
+CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henryisaway/Desktop/Lunaria/Mira/src/shaderapps/shaderapps.cpp > CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.i
+
+CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henryisaway/Desktop/Lunaria/Mira/src/shaderapps/shaderapps.cpp -o CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.s
+
 CMakeFiles/Mira.dir/src/controller/engine.cpp.o: CMakeFiles/Mira.dir/flags.make
 CMakeFiles/Mira.dir/src/controller/engine.cpp.o: /home/henryisaway/Desktop/Lunaria/Mira/src/controller/engine.cpp
 CMakeFiles/Mira.dir/src/controller/engine.cpp.o: CMakeFiles/Mira.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Mira.dir/src/controller/engine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Mira.dir/src/controller/engine.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mira.dir/src/controller/engine.cpp.o -MF CMakeFiles/Mira.dir/src/controller/engine.cpp.o.d -o CMakeFiles/Mira.dir/src/controller/engine.cpp.o -c /home/henryisaway/Desktop/Lunaria/Mira/src/controller/engine.cpp
 
 CMakeFiles/Mira.dir/src/controller/engine.cpp.i: cmake_force
@@ -125,12 +153,29 @@ CMakeFiles/Mira.dir/src/controller/engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mira.dir/src/controller/engine.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henryisaway/Desktop/Lunaria/Mira/src/controller/engine.cpp -o CMakeFiles/Mira.dir/src/controller/engine.cpp.s
 
+CMakeFiles/Mira.dir/src/controller/test.cpp.o: CMakeFiles/Mira.dir/flags.make
+CMakeFiles/Mira.dir/src/controller/test.cpp.o: /home/henryisaway/Desktop/Lunaria/Mira/src/controller/test.cpp
+CMakeFiles/Mira.dir/src/controller/test.cpp.o: CMakeFiles/Mira.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Mira.dir/src/controller/test.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mira.dir/src/controller/test.cpp.o -MF CMakeFiles/Mira.dir/src/controller/test.cpp.o.d -o CMakeFiles/Mira.dir/src/controller/test.cpp.o -c /home/henryisaway/Desktop/Lunaria/Mira/src/controller/test.cpp
+
+CMakeFiles/Mira.dir/src/controller/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mira.dir/src/controller/test.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henryisaway/Desktop/Lunaria/Mira/src/controller/test.cpp > CMakeFiles/Mira.dir/src/controller/test.cpp.i
+
+CMakeFiles/Mira.dir/src/controller/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mira.dir/src/controller/test.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henryisaway/Desktop/Lunaria/Mira/src/controller/test.cpp -o CMakeFiles/Mira.dir/src/controller/test.cpp.s
+
 # Object files for target Mira
 Mira_OBJECTS = \
 "CMakeFiles/Mira.dir/src/config.cpp.o" \
 "CMakeFiles/Mira.dir/src/main.cpp.o" \
 "CMakeFiles/Mira.dir/src/glad.c.o" \
-"CMakeFiles/Mira.dir/src/controller/engine.cpp.o"
+"CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o" \
+"CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o" \
+"CMakeFiles/Mira.dir/src/controller/engine.cpp.o" \
+"CMakeFiles/Mira.dir/src/controller/test.cpp.o"
 
 # External object files for target Mira
 Mira_EXTERNAL_OBJECTS =
@@ -138,12 +183,15 @@ Mira_EXTERNAL_OBJECTS =
 Mira: CMakeFiles/Mira.dir/src/config.cpp.o
 Mira: CMakeFiles/Mira.dir/src/main.cpp.o
 Mira: CMakeFiles/Mira.dir/src/glad.c.o
+Mira: CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o
+Mira: CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o
 Mira: CMakeFiles/Mira.dir/src/controller/engine.cpp.o
+Mira: CMakeFiles/Mira.dir/src/controller/test.cpp.o
 Mira: CMakeFiles/Mira.dir/build.make
 Mira: /usr/lib/x86_64-linux-gnu/libGLX.so
 Mira: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 Mira: CMakeFiles/Mira.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Mira"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Mira"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Mira.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

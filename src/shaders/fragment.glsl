@@ -1,14 +1,7 @@
 #version 330 core
 
-in vec2 fragmentTexCoord;
-
-out vec4 screenColour;
-
-uniform sampler2D material;
-uniform sampler2D mask;
+out vec4 fragColour;
 
 void main(){
-    vec3 baseColour = texture(material, fragmentTexCoord).rgb;
-    float alpha = texture(mask, fragmentTexCoord).r;
-    screenColour = vec4(baseColour, alpha);
+    fragColour = vec4(1.0, 0.0, 0.0, 1.0);
 }

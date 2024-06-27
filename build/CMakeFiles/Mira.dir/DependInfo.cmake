@@ -11,7 +11,10 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/henryisaway/Desktop/Lunaria/Mira/src/glad.c" "CMakeFiles/Mira.dir/src/glad.c.o" "gcc" "CMakeFiles/Mira.dir/src/glad.c.o.d"
   "/home/henryisaway/Desktop/Lunaria/Mira/src/config.cpp" "CMakeFiles/Mira.dir/src/config.cpp.o" "gcc" "CMakeFiles/Mira.dir/src/config.cpp.o.d"
   "/home/henryisaway/Desktop/Lunaria/Mira/src/controller/engine.cpp" "CMakeFiles/Mira.dir/src/controller/engine.cpp.o" "gcc" "CMakeFiles/Mira.dir/src/controller/engine.cpp.o.d"
+  "/home/henryisaway/Desktop/Lunaria/Mira/src/controller/test.cpp" "CMakeFiles/Mira.dir/src/controller/test.cpp.o" "gcc" "CMakeFiles/Mira.dir/src/controller/test.cpp.o.d"
   "/home/henryisaway/Desktop/Lunaria/Mira/src/main.cpp" "CMakeFiles/Mira.dir/src/main.cpp.o" "gcc" "CMakeFiles/Mira.dir/src/main.cpp.o.d"
+  "/home/henryisaway/Desktop/Lunaria/Mira/src/shaderapps/shaderapps.cpp" "CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o" "gcc" "CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o.d"
+  "/home/henryisaway/Desktop/Lunaria/Mira/src/systems/renderSystem.cpp" "CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o" "gcc" "CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

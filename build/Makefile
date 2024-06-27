@@ -177,6 +177,30 @@ src/controller/engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/controller/engine.cpp.s
 .PHONY : src/controller/engine.cpp.s
 
+src/controller/test.o: src/controller/test.cpp.o
+.PHONY : src/controller/test.o
+
+# target to build an object file
+src/controller/test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/controller/test.cpp.o
+.PHONY : src/controller/test.cpp.o
+
+src/controller/test.i: src/controller/test.cpp.i
+.PHONY : src/controller/test.i
+
+# target to preprocess a source file
+src/controller/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/controller/test.cpp.i
+.PHONY : src/controller/test.cpp.i
+
+src/controller/test.s: src/controller/test.cpp.s
+.PHONY : src/controller/test.s
+
+# target to generate assembly for a file
+src/controller/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/controller/test.cpp.s
+.PHONY : src/controller/test.cpp.s
+
 src/glad.o: src/glad.c.o
 .PHONY : src/glad.o
 
@@ -225,6 +249,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/shaderapps/shaderapps.o: src/shaderapps/shaderapps.cpp.o
+.PHONY : src/shaderapps/shaderapps.o
+
+# target to build an object file
+src/shaderapps/shaderapps.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o
+.PHONY : src/shaderapps/shaderapps.cpp.o
+
+src/shaderapps/shaderapps.i: src/shaderapps/shaderapps.cpp.i
+.PHONY : src/shaderapps/shaderapps.i
+
+# target to preprocess a source file
+src/shaderapps/shaderapps.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.i
+.PHONY : src/shaderapps/shaderapps.cpp.i
+
+src/shaderapps/shaderapps.s: src/shaderapps/shaderapps.cpp.s
+.PHONY : src/shaderapps/shaderapps.s
+
+# target to generate assembly for a file
+src/shaderapps/shaderapps.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.s
+.PHONY : src/shaderapps/shaderapps.cpp.s
+
+src/systems/renderSystem.o: src/systems/renderSystem.cpp.o
+.PHONY : src/systems/renderSystem.o
+
+# target to build an object file
+src/systems/renderSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o
+.PHONY : src/systems/renderSystem.cpp.o
+
+src/systems/renderSystem.i: src/systems/renderSystem.cpp.i
+.PHONY : src/systems/renderSystem.i
+
+# target to preprocess a source file
+src/systems/renderSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.i
+.PHONY : src/systems/renderSystem.cpp.i
+
+src/systems/renderSystem.s: src/systems/renderSystem.cpp.s
+.PHONY : src/systems/renderSystem.s
+
+# target to generate assembly for a file
+src/systems/renderSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.s
+.PHONY : src/systems/renderSystem.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,12 +312,21 @@ help:
 	@echo "... src/controller/engine.o"
 	@echo "... src/controller/engine.i"
 	@echo "... src/controller/engine.s"
+	@echo "... src/controller/test.o"
+	@echo "... src/controller/test.i"
+	@echo "... src/controller/test.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/shaderapps/shaderapps.o"
+	@echo "... src/shaderapps/shaderapps.i"
+	@echo "... src/shaderapps/shaderapps.s"
+	@echo "... src/systems/renderSystem.o"
+	@echo "... src/systems/renderSystem.i"
+	@echo "... src/systems/renderSystem.s"
 .PHONY : help
 
 
