@@ -2,7 +2,7 @@
 
 #include "../config.h"
 
-#include "../components/renderComponents.h"
+#include "../components/renderComponent.h"
 
 class RenderSystem{
 public:

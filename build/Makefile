@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/henryisaway/Desktop/Lunaria/Mira
+CMAKE_SOURCE_DIR = /home/henryisaway/Desktop/Lunaria/Jynx
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/henryisaway/Desktop/Lunaria/Mira/build
+CMAKE_BINARY_DIR = /home/henryisaway/Desktop/Lunaria/Jynx/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles /home/henryisaway/Desktop/Lunaria/Mira/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles /home/henryisaway/Desktop/Lunaria/Jynx/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Mira
+# Target rules for targets named Jynx
 
 # Build rule for target.
-Mira: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Mira
-.PHONY : Mira
+Jynx: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Jynx
+.PHONY : Jynx
 
 # fast build rule for target.
-Mira/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/build
-.PHONY : Mira/fast
+Jynx/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/build
+.PHONY : Jynx/fast
 
 src/config.o: src/config.cpp.o
 .PHONY : src/config.o
 
 # target to build an object file
 src/config.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/config.cpp.o
 .PHONY : src/config.cpp.o
 
 src/config.i: src/config.cpp.i
@@ -142,7 +142,7 @@ src/config.i: src/config.cpp.i
 
 # target to preprocess a source file
 src/config.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/config.cpp.i
 .PHONY : src/config.cpp.i
 
 src/config.s: src/config.cpp.s
@@ -150,7 +150,7 @@ src/config.s: src/config.cpp.s
 
 # target to generate assembly for a file
 src/config.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/config.cpp.s
 .PHONY : src/config.cpp.s
 
 src/controller/engine.o: src/controller/engine.cpp.o
@@ -158,7 +158,7 @@ src/controller/engine.o: src/controller/engine.cpp.o
 
 # target to build an object file
 src/controller/engine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/controller/engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/controller/engine.cpp.o
 .PHONY : src/controller/engine.cpp.o
 
 src/controller/engine.i: src/controller/engine.cpp.i
@@ -166,7 +166,7 @@ src/controller/engine.i: src/controller/engine.cpp.i
 
 # target to preprocess a source file
 src/controller/engine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/controller/engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/controller/engine.cpp.i
 .PHONY : src/controller/engine.cpp.i
 
 src/controller/engine.s: src/controller/engine.cpp.s
@@ -174,39 +174,15 @@ src/controller/engine.s: src/controller/engine.cpp.s
 
 # target to generate assembly for a file
 src/controller/engine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/controller/engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/controller/engine.cpp.s
 .PHONY : src/controller/engine.cpp.s
-
-src/controller/test.o: src/controller/test.cpp.o
-.PHONY : src/controller/test.o
-
-# target to build an object file
-src/controller/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/controller/test.cpp.o
-.PHONY : src/controller/test.cpp.o
-
-src/controller/test.i: src/controller/test.cpp.i
-.PHONY : src/controller/test.i
-
-# target to preprocess a source file
-src/controller/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/controller/test.cpp.i
-.PHONY : src/controller/test.cpp.i
-
-src/controller/test.s: src/controller/test.cpp.s
-.PHONY : src/controller/test.s
-
-# target to generate assembly for a file
-src/controller/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/controller/test.cpp.s
-.PHONY : src/controller/test.cpp.s
 
 src/glad.o: src/glad.c.o
 .PHONY : src/glad.o
 
 # target to build an object file
 src/glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/glad.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/glad.c.o
 .PHONY : src/glad.c.o
 
 src/glad.i: src/glad.c.i
@@ -214,7 +190,7 @@ src/glad.i: src/glad.c.i
 
 # target to preprocess a source file
 src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/glad.c.i
 .PHONY : src/glad.c.i
 
 src/glad.s: src/glad.c.s
@@ -222,7 +198,7 @@ src/glad.s: src/glad.c.s
 
 # target to generate assembly for a file
 src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
 src/main.o: src/main.cpp.o
@@ -230,7 +206,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -238,7 +214,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -246,7 +222,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/shaderapps/shaderapps.o: src/shaderapps/shaderapps.cpp.o
@@ -254,7 +230,7 @@ src/shaderapps/shaderapps.o: src/shaderapps/shaderapps.cpp.o
 
 # target to build an object file
 src/shaderapps/shaderapps.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o
 .PHONY : src/shaderapps/shaderapps.cpp.o
 
 src/shaderapps/shaderapps.i: src/shaderapps/shaderapps.cpp.i
@@ -262,7 +238,7 @@ src/shaderapps/shaderapps.i: src/shaderapps/shaderapps.cpp.i
 
 # target to preprocess a source file
 src/shaderapps/shaderapps.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.i
 .PHONY : src/shaderapps/shaderapps.cpp.i
 
 src/shaderapps/shaderapps.s: src/shaderapps/shaderapps.cpp.s
@@ -270,7 +246,7 @@ src/shaderapps/shaderapps.s: src/shaderapps/shaderapps.cpp.s
 
 # target to generate assembly for a file
 src/shaderapps/shaderapps.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/shaderapps/shaderapps.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.s
 .PHONY : src/shaderapps/shaderapps.cpp.s
 
 src/systems/renderSystem.o: src/systems/renderSystem.cpp.o
@@ -278,7 +254,7 @@ src/systems/renderSystem.o: src/systems/renderSystem.cpp.o
 
 # target to build an object file
 src/systems/renderSystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o
 .PHONY : src/systems/renderSystem.cpp.o
 
 src/systems/renderSystem.i: src/systems/renderSystem.cpp.i
@@ -286,7 +262,7 @@ src/systems/renderSystem.i: src/systems/renderSystem.cpp.i
 
 # target to preprocess a source file
 src/systems/renderSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.i
 .PHONY : src/systems/renderSystem.cpp.i
 
 src/systems/renderSystem.s: src/systems/renderSystem.cpp.s
@@ -294,7 +270,7 @@ src/systems/renderSystem.s: src/systems/renderSystem.cpp.s
 
 # target to generate assembly for a file
 src/systems/renderSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/src/systems/renderSystem.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.s
 .PHONY : src/systems/renderSystem.cpp.s
 
 # Help Target
@@ -305,16 +281,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Mira"
+	@echo "... Jynx"
 	@echo "... src/config.o"
 	@echo "... src/config.i"
 	@echo "... src/config.s"
 	@echo "... src/controller/engine.o"
 	@echo "... src/controller/engine.i"
 	@echo "... src/controller/engine.s"
-	@echo "... src/controller/test.o"
-	@echo "... src/controller/test.i"
-	@echo "... src/controller/test.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"

@@ -13,4 +13,4 @@ cd build
 
 cmake ..
 make
-./Mira
+./Jynx

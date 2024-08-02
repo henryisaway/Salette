@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(Mira)
+project(Jynx)
 cmake_policy(SET CMP0072 NEW)
 
 # Set C++ standard
@@ -24,7 +24,7 @@ set(GLM_ROOT "${CMAKE_SOURCE_DIR}/dependencies/glm")
 include_directories(${GLM_ROOT}/include)
 
 # Add executable
-add_executable(Mira
+add_executable(Jynx
             src/config.h
             src/config.cpp
             src/main.cpp
@@ -32,8 +32,7 @@ add_executable(Mira
             src/systems/renderSystem.cpp
             src/shaderapps/shaderapps.cpp
             src/controller/engine.cpp
-            src/controller/test.cpp
             )
 
 # Link libraries
-target_link_libraries(Mira glfw OpenGL::GL)
+target_link_libraries(Jynx glfw OpenGL::GL)

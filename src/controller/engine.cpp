@@ -8,37 +8,16 @@ Engine::Engine(){
 }
 
 Engine::~Engine(){
+    glDeleteVertexArrays(VAOs.size(), VAOs.data());
+    glDeleteBuffers(VBOs.size(), VBOs.data());
+    
     glfwDestroyWindow(window);
+    
     glfwTerminate();
 }
 
 unsigned int Engine::createEntity(){
     return entityID++;
-}
-
-unsigned int Engine::makeTriMesh(){
-    std::vector<float> vertices = {
-        -1.0f, -1.0f, 0.0f,
-        -1.0f,  1.0f, 0.0f,
-         1.0f, -1.0f, 0.0f,
-    };
-    
-    unsigned int VAO;
-    glGenVertexArrays(1, &VAO);
-    VAOs.push_back(VAO);
-    glBindVertexArray(VAO);
-
-    unsigned int VBO;
-    glGenBuffers(1, &VBO);
-    VBOs.push_back(VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
-    
-    //position
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 12, (void*)0);
-    glEnableVertexAttribArray(0);
-        
-    return VAO;
 }
 
 unsigned int Engine::makeCube(float s){
@@ -104,14 +83,17 @@ unsigned int Engine::makeCube(float s){
 }
 
 void Engine::run(){
-    while(!glfwWindowShouldClose(window)){
-        glfwPollEvents();
+    while(!glfwWindowShouldClose(window)){        
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+            glfwSetWindowShouldClose(window, true);
+        }
+        cameraSystem->update(transformComponents, cameraID, cameraComponent);
         renderSystem->update(renderComponents);
     }
 }
 
 void Engine::setupOpenGL(){
-    glClearColor(0.25f, 0.5f, 0.75f, 1.0f);
+    glClearColor(0.21f, 0.02f, 0.12f, 1.0f);
 
 	int w,h;
 	glfwGetFramebufferSize(window, &w, &h);
@@ -142,7 +124,7 @@ void Engine::setupGLFW(){
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GLFW_TRUE);
     
-    window = glfwCreateWindow(WINWIDTH, WINHEIGHT, "Mira Graphics Engine", NULL, NULL);
+    window = glfwCreateWindow(WINWIDTH, WINHEIGHT, "Jynx Graphics Engine", NULL, NULL);
     if(!window){
         glfwTerminate();
         std::cerr << "Failed to create GLFW window." << std::endl;
@@ -152,9 +134,8 @@ void Engine::setupGLFW(){
     glfwMakeContextCurrent(window);
     
     if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-        glfwTerminate();
         std::cerr << "Failed to load OpenGL." << std::endl;
-        glfwSetWindowShouldClose(window, true);
+        glfwTerminate();
     }
 }
 

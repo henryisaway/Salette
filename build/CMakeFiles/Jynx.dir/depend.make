@@ -1,2 +1,2 @@
-# Empty dependencies file for Mira.
+# Empty dependencies file for Jynx.
 # This may be replaced when dependencies are built.

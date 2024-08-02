@@ -54,16 +54,16 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/henryisaway/Desktop/Lunaria/Mira
+CMAKE_SOURCE_DIR = /home/henryisaway/Desktop/Lunaria/Jynx
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/henryisaway/Desktop/Lunaria/Mira/build
+CMAKE_BINARY_DIR = /home/henryisaway/Desktop/Lunaria/Jynx/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Mira.dir/all
+all: CMakeFiles/Jynx.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Mira.dir/clean
+clean: CMakeFiles/Jynx.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Mira.dir
+# Target rules for target CMakeFiles/Jynx.dir
 
 # All Build rule for target.
-CMakeFiles/Mira.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target Mira"
-.PHONY : CMakeFiles/Mira.dir/all
+CMakeFiles/Jynx.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Jynx"
+.PHONY : CMakeFiles/Jynx.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Mira.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Mira.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/henryisaway/Desktop/Lunaria/Mira/build/CMakeFiles 0
-.PHONY : CMakeFiles/Mira.dir/rule
+CMakeFiles/Jynx.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Jynx.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles 0
+.PHONY : CMakeFiles/Jynx.dir/rule
 
 # Convenience name for target.
-Mira: CMakeFiles/Mira.dir/rule
-.PHONY : Mira
+Jynx: CMakeFiles/Jynx.dir/rule
+.PHONY : Jynx
 
 # clean rule for target.
-CMakeFiles/Mira.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mira.dir/build.make CMakeFiles/Mira.dir/clean
-.PHONY : CMakeFiles/Mira.dir/clean
+CMakeFiles/Jynx.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/clean
+.PHONY : CMakeFiles/Jynx.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
