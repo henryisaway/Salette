@@ -3,7 +3,7 @@
 void MotionSystem::update(std::unordered_map<unsigned int, TransformComponent> &transformComponents, std::unordered_map<unsigned int, PhysicsComponent> &physicsComponents, float deltaTime){
 
     // For each entity in the physics components list
-    for(std::pair<unsigned int, PhysicsComponent> entity : physicsComponent){
+    for(std::pair<unsigned int, PhysicsComponent> entity : physicsComponents){
 
         transformComponents[entity.first].position += entity.second.velocity * deltaTime;
         transformComponents[entity.first].eulers += entity.second.eulers * deltaTime;

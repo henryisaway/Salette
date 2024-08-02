@@ -13,6 +13,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/henryisaway/Desktop/Lunaria/Jynx/src/controller/engine.cpp" "CMakeFiles/Jynx.dir/src/controller/engine.cpp.o" "gcc" "CMakeFiles/Jynx.dir/src/controller/engine.cpp.o.d"
   "/home/henryisaway/Desktop/Lunaria/Jynx/src/main.cpp" "CMakeFiles/Jynx.dir/src/main.cpp.o" "gcc" "CMakeFiles/Jynx.dir/src/main.cpp.o.d"
   "/home/henryisaway/Desktop/Lunaria/Jynx/src/shaderapps/shaderapps.cpp" "CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o" "gcc" "CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o.d"
+  "/home/henryisaway/Desktop/Lunaria/Jynx/src/systems/cameraSystem.cpp" "CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o" "gcc" "CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o.d"
+  "/home/henryisaway/Desktop/Lunaria/Jynx/src/systems/motionSystem.cpp" "CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o" "gcc" "CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o.d"
   "/home/henryisaway/Desktop/Lunaria/Jynx/src/systems/renderSystem.cpp" "CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o" "gcc" "CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o.d"
   )
 

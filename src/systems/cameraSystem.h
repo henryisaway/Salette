@@ -5,7 +5,7 @@
 
 class CameraSystem {
 public:
-    CameraSystem(unsigned int shader, GLFWwindow* window);
+    CameraSystem(GLFWwindow* window, unsigned int shader);
     
     void update(std::unordered_map<unsigned int, TransformComponent> &transformComponent, unsigned int cameraID, CameraComponent& cameraComponent);
     

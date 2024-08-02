@@ -29,6 +29,8 @@ add_executable(Jynx
             src/config.cpp
             src/main.cpp
             src/glad.c
+            src/systems/cameraSystem.cpp
+            src/systems/motionSystem.cpp
             src/systems/renderSystem.cpp
             src/shaderapps/shaderapps.cpp
             src/controller/engine.cpp

@@ -111,10 +111,38 @@ CMakeFiles/Jynx.dir/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Jynx.dir/src/glad.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/henryisaway/Desktop/Lunaria/Jynx/src/glad.c -o CMakeFiles/Jynx.dir/src/glad.c.s
 
+CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o: CMakeFiles/Jynx.dir/flags.make
+CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o: /home/henryisaway/Desktop/Lunaria/Jynx/src/systems/cameraSystem.cpp
+CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o: CMakeFiles/Jynx.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o -MF CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o.d -o CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o -c /home/henryisaway/Desktop/Lunaria/Jynx/src/systems/cameraSystem.cpp
+
+CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henryisaway/Desktop/Lunaria/Jynx/src/systems/cameraSystem.cpp > CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.i
+
+CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henryisaway/Desktop/Lunaria/Jynx/src/systems/cameraSystem.cpp -o CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.s
+
+CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o: CMakeFiles/Jynx.dir/flags.make
+CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o: /home/henryisaway/Desktop/Lunaria/Jynx/src/systems/motionSystem.cpp
+CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o: CMakeFiles/Jynx.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o -MF CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o.d -o CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o -c /home/henryisaway/Desktop/Lunaria/Jynx/src/systems/motionSystem.cpp
+
+CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henryisaway/Desktop/Lunaria/Jynx/src/systems/motionSystem.cpp > CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.i
+
+CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henryisaway/Desktop/Lunaria/Jynx/src/systems/motionSystem.cpp -o CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.s
+
 CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o: CMakeFiles/Jynx.dir/flags.make
 CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o: /home/henryisaway/Desktop/Lunaria/Jynx/src/systems/renderSystem.cpp
 CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o: CMakeFiles/Jynx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o -MF CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o.d -o CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o -c /home/henryisaway/Desktop/Lunaria/Jynx/src/systems/renderSystem.cpp
 
 CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.i: cmake_force
@@ -128,7 +156,7 @@ CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.s: cmake_force
 CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o: CMakeFiles/Jynx.dir/flags.make
 CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o: /home/henryisaway/Desktop/Lunaria/Jynx/src/shaderapps/shaderapps.cpp
 CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o: CMakeFiles/Jynx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o -MF CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o.d -o CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o -c /home/henryisaway/Desktop/Lunaria/Jynx/src/shaderapps/shaderapps.cpp
 
 CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.i: cmake_force
@@ -142,7 +170,7 @@ CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.s: cmake_force
 CMakeFiles/Jynx.dir/src/controller/engine.cpp.o: CMakeFiles/Jynx.dir/flags.make
 CMakeFiles/Jynx.dir/src/controller/engine.cpp.o: /home/henryisaway/Desktop/Lunaria/Jynx/src/controller/engine.cpp
 CMakeFiles/Jynx.dir/src/controller/engine.cpp.o: CMakeFiles/Jynx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Jynx.dir/src/controller/engine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Jynx.dir/src/controller/engine.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Jynx.dir/src/controller/engine.cpp.o -MF CMakeFiles/Jynx.dir/src/controller/engine.cpp.o.d -o CMakeFiles/Jynx.dir/src/controller/engine.cpp.o -c /home/henryisaway/Desktop/Lunaria/Jynx/src/controller/engine.cpp
 
 CMakeFiles/Jynx.dir/src/controller/engine.cpp.i: cmake_force
@@ -158,6 +186,8 @@ Jynx_OBJECTS = \
 "CMakeFiles/Jynx.dir/src/config.cpp.o" \
 "CMakeFiles/Jynx.dir/src/main.cpp.o" \
 "CMakeFiles/Jynx.dir/src/glad.c.o" \
+"CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o" \
+"CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o" \
 "CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o" \
 "CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o" \
 "CMakeFiles/Jynx.dir/src/controller/engine.cpp.o"
@@ -168,6 +198,8 @@ Jynx_EXTERNAL_OBJECTS =
 Jynx: CMakeFiles/Jynx.dir/src/config.cpp.o
 Jynx: CMakeFiles/Jynx.dir/src/main.cpp.o
 Jynx: CMakeFiles/Jynx.dir/src/glad.c.o
+Jynx: CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o
+Jynx: CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o
 Jynx: CMakeFiles/Jynx.dir/src/systems/renderSystem.cpp.o
 Jynx: CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.o
 Jynx: CMakeFiles/Jynx.dir/src/controller/engine.cpp.o
@@ -175,7 +207,7 @@ Jynx: CMakeFiles/Jynx.dir/build.make
 Jynx: /usr/lib/x86_64-linux-gnu/libGLX.so
 Jynx: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 Jynx: CMakeFiles/Jynx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Jynx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Jynx"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Jynx.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

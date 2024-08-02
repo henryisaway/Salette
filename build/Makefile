@@ -249,6 +249,54 @@ src/shaderapps/shaderapps.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/shaderapps/shaderapps.cpp.s
 .PHONY : src/shaderapps/shaderapps.cpp.s
 
+src/systems/cameraSystem.o: src/systems/cameraSystem.cpp.o
+.PHONY : src/systems/cameraSystem.o
+
+# target to build an object file
+src/systems/cameraSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.o
+.PHONY : src/systems/cameraSystem.cpp.o
+
+src/systems/cameraSystem.i: src/systems/cameraSystem.cpp.i
+.PHONY : src/systems/cameraSystem.i
+
+# target to preprocess a source file
+src/systems/cameraSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.i
+.PHONY : src/systems/cameraSystem.cpp.i
+
+src/systems/cameraSystem.s: src/systems/cameraSystem.cpp.s
+.PHONY : src/systems/cameraSystem.s
+
+# target to generate assembly for a file
+src/systems/cameraSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/systems/cameraSystem.cpp.s
+.PHONY : src/systems/cameraSystem.cpp.s
+
+src/systems/motionSystem.o: src/systems/motionSystem.cpp.o
+.PHONY : src/systems/motionSystem.o
+
+# target to build an object file
+src/systems/motionSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.o
+.PHONY : src/systems/motionSystem.cpp.o
+
+src/systems/motionSystem.i: src/systems/motionSystem.cpp.i
+.PHONY : src/systems/motionSystem.i
+
+# target to preprocess a source file
+src/systems/motionSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.i
+.PHONY : src/systems/motionSystem.cpp.i
+
+src/systems/motionSystem.s: src/systems/motionSystem.cpp.s
+.PHONY : src/systems/motionSystem.s
+
+# target to generate assembly for a file
+src/systems/motionSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Jynx.dir/build.make CMakeFiles/Jynx.dir/src/systems/motionSystem.cpp.s
+.PHONY : src/systems/motionSystem.cpp.s
+
 src/systems/renderSystem.o: src/systems/renderSystem.cpp.o
 .PHONY : src/systems/renderSystem.o
 
@@ -297,6 +345,12 @@ help:
 	@echo "... src/shaderapps/shaderapps.o"
 	@echo "... src/shaderapps/shaderapps.i"
 	@echo "... src/shaderapps/shaderapps.s"
+	@echo "... src/systems/cameraSystem.o"
+	@echo "... src/systems/cameraSystem.i"
+	@echo "... src/systems/cameraSystem.s"
+	@echo "... src/systems/motionSystem.o"
+	@echo "... src/systems/motionSystem.i"
+	@echo "... src/systems/motionSystem.s"
 	@echo "... src/systems/renderSystem.o"
 	@echo "... src/systems/renderSystem.i"
 	@echo "... src/systems/renderSystem.s"

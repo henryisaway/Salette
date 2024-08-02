@@ -6,6 +6,8 @@
 #include "../components/physicsComponent.h"
 #include "../components/transformComponent.h"
 
+#include "../systems/motionSystem.h"
+#include "../systems/cameraSystem.h"
 #include "../systems/renderSystem.h"
 #include "../shaderapps/shaderapps.h"
 
@@ -40,5 +42,7 @@ private:
     
     unsigned int shader;
     
+    MotionSystem* motionSystem;
+    CameraSystem* cameraSystem;
     RenderSystem* renderSystem;
 };

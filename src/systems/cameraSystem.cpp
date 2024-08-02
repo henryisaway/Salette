@@ -1,6 +1,6 @@
 #include "cameraSystem.h"
 
-CameraSystem::CameraSystem(unsigned int shader, GLFWwindow* window) {
+CameraSystem::CameraSystem(GLFWwindow* window, unsigned int shader) {
     this->window = window;
     
     glUseProgram(shader);
@@ -25,7 +25,7 @@ void CameraSystem::update(std::unordered_map<unsigned int, TransformComponent> &
         glm::sin(phi)
     };
     right = glm::normalize(glm::cross(forwards, globalUp));
-    up = glm::normalize(glm::cross(right, forwads));
+    up = glm::normalize(glm::cross(right, forwards));
     
     // View matrix is done here
     glm::mat4 view = glm::lookAt(pos, pos + forwards, up);
