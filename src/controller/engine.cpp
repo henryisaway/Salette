@@ -131,7 +131,7 @@ unsigned int Engine::makeTexture(const char* filename){
 }
 
 void Engine::setupOpenGL(){
-    glClearColor(0.25f, 0.5f, 0.75f, 1.0f);
+    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
 
 	int w,h;
 	glfwGetFramebufferSize(window, &w, &h);
@@ -181,6 +181,8 @@ void Engine::setupGLFW(){
         std::cerr << "Failed to load OpenGL." << std::endl;
         glfwTerminate();
     }
+    
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 }
 
 void Engine::makeSystems(){

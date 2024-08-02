@@ -1,3 +1,0 @@
-/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles/Jynx.dir
-/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles/edit_cache.dir
-/home/henryisaway/Desktop/Lunaria/Jynx/build/CMakeFiles/rebuild_cache.dir
