@@ -25,15 +25,9 @@ include_directories(${GLM_ROOT}/include)
 
 # Add executable
 add_executable(Jynx
-            src/config.h
-            src/config.cpp
-            src/main.cpp
-            src/glad.c
-            src/systems/cameraSystem.cpp
-            src/systems/motionSystem.cpp
-            src/systems/renderSystem.cpp
-            src/shaderapps/shaderapps.cpp
-            src/controller/engine.cpp
+            src2/config.h
+            src2/main.cpp
+            src2/glad.c
             )
 
 # Link libraries
