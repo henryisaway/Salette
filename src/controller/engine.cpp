@@ -121,7 +121,7 @@ unsigned int Engine::makeTexture(const char* filename){
     
     stbi_image_free(data);
     
-    // Sampelr settings
+    // Sampler settings
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
