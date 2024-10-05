@@ -25,12 +25,12 @@ include_directories(${GLM_ROOT}/include)
 
 # Add executable
 add_executable(Jynx
-            src2/config.h
-            src2/config.cpp
-            src2/main.cpp
-            src2/glad.c
-            src2/events/keyboard.cpp
-            src2/core/app.cpp
+            src/config.h
+            src/config.cpp
+            src/main.cpp
+            src/glad.c
+            src/events/keyboard.cpp
+            src/core/app.cpp
             )
 
 # Link libraries
