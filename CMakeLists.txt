@@ -29,7 +29,9 @@ add_executable(Jynx
             src/config.cpp
             src/main.cpp
             src/glad.c
-            src/events/keyboard.cpp
+            src/events/inputHandler.cpp
+            src/shaders/shaderapps.cpp
+            src/factory/factory.cpp
             src/core/app.cpp
             )
 

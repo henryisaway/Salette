@@ -1,7 +1,7 @@
 #include "../config.h"
 
-class KeyboardManager{
+class KeyboardHandler{
 public:
-	KeyboardManager(GLFWwindow* window);
+	KeyboardHandler(GLFWwindow* window);
 	static void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 };
