@@ -1,4 +1,4 @@
-#include "../../include/core/app.h"
+#include "../../include/renderer/OpenGL.h"
 
 App::App(){
 	setupGLFW();

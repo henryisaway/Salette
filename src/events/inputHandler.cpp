@@ -1,4 +1,4 @@
-#include "inputHandler.h"
+#include "../../include/events/inputHandler.h"
 
 KeyboardHandler::KeyboardHandler(GLFWwindow* window){
 	glfwSetKeyCallback(window, KeyCallback);

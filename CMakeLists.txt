@@ -25,12 +25,12 @@ include_directories(${GLM_ROOT}/include)
 
 # Add executable
 add_executable(Jynx
-            src/config.h
-            src/config.cpp
+            include/core/config.h
+            src/core/config.cpp
             src/main.cpp
-            src/glad.c
+            dependencies/glad/src/glad.c
             src/events/inputHandler.cpp
-            src/shaders/shaderapps.cpp
+            src/shader/shaderLinker.cpp
             src/factory/factory.cpp
             src/core/app.cpp
             )

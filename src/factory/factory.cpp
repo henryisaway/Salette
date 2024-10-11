@@ -1,4 +1,4 @@
-#include "factory.h"
+#include "../../include/factory/factory.h"
 
 unsigned int PrimitiveModels::makeTriangle(){
 	float vertices[] = {
