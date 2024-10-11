@@ -1,45 +1,22 @@
-#include "config.h"
-#include "controller/engine.h"
+//Copyright 2024 henryisaway
+//
+//Licensed under the Apache License, Version 2.0 (the "License");
+//you may not use this file except in compliance with the License.
+//You may obtain a copy of the License at
+//
+//http://www.apache.org/licenses/LICENSE-2.0
+//
+//Unless required by applicable law or agreed to in writing, software
+//distributed under the License is distributed on an "AS IS" BASIS,
+//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//See the License for the specific language governing permissions and
+//limitations under the License.
 
-#include "components/renderComponent.h"
-#include "components/cameraComponent.h"
-#include "components/physicsComponent.h"
-#include "components/transformComponent.h"
+#include "../include/core/config.h"
+#include "../include/core/app.h"
 
 int main(){
-    Engine* engine = new Engine();
-    
-    // Creating cube
-    unsigned int cube = engine->createEntity();
-    TransformComponent transform;
-    transform.position = {0.0f, 0.0f, 0.0f};
-    transform.eulers = {0.0f, 0.0f, 0.0f};
-    engine->transformComponents[cube] = transform;
-    
-    PhysicsComponent physics;
-    physics.velocity = {0.0f, 0.0f, 0.0f};
-    physics.eulers = {0.0f, 0.0f, -20.0f};
-    engine->physicsComponents[cube] = physics;
-    
-    RenderComponent render;
-    render.mesh = engine->makeCube(0.25f);
-    render.material = engine->makeTexture("../img/test2.png");
-    engine->renderComponents[cube] = render;
-    
-    unsigned int cameraEntity = engine->createEntity();
-    transform.position = {-3.0f, 0.0f, 0.5f};
-    transform.eulers = {0.0f, 0.0f, 15.0f};
-    engine->transformComponents[cameraEntity] = transform;
-    
-    CameraComponent* camera = new CameraComponent();
-    engine->cameraComponent = camera;
-    engine->cameraID = cameraEntity;
-    
-    engine->setupOpenGL();
-    engine->makeSystems();
-    
-    engine->run();
-    
-    delete engine;
-    return 0;
+	App app;
+	app.run();
+	return 0;
 }

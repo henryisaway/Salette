@@ -1,4 +1,4 @@
-#include "shaderapps.h"
+#include "../../include/shader/shaderLinker.h"
 
 // This links all compiled shader modules together
 unsigned int linkShader(const std::string &vertexFilepath, const std::string &fragmentFilepath){
