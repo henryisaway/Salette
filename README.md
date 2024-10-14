@@ -6,7 +6,7 @@ Jynx is a custom general-purpose 2D/3D graphics engine designed for flexibility,
 
 ## Features
 
-- **High Performance**: Optimized for fast rendering and efficient resource management.
+- **Lightweight**: Good for fast rendering and efficient resource management.
 - **Flexible API**: A high-level Lua interface allows for easier scripting and rapid iteration.
 - **Mod-Friendly Architecture**: Designed to facilitate modding in games, ensuring ease of use for both developers and end-users.
 - **Multi-Platform Support**: Initially implemented on OpenGL, with plans for support across multiple graphical APIs.
