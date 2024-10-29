@@ -1,7 +1,10 @@
 #include "../../include/core/app.h"
 
 App::App(){
-	setupGLFW();
+	loadGLFW();
+	loadGLAD();
+	createWindow();
+	GLFWSettings();
 	makeSystems(m_window);
 }
 
@@ -33,7 +36,7 @@ void App::run(){
 	if(DEBUG_MODE) std::cout << "Program finished." << std::endl;
 }
 
-void App::setupGLFW(){
+void App::loadGLFW(){
 	if(DEBUG_MODE) std::cout << "Setting up GLFW...\n";
 	if(!glfwInit()){
 		std::cerr << "Failed to initialise GLFW." << std::endl;
@@ -42,7 +45,17 @@ void App::setupGLFW(){
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+}
 
+void App::loadGLAD(){
+	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+		std::cerr << "Failed to initialise GLAD." << std::endl;
+		glfwTerminate();
+		exit(-1);
+	}
+}
+
+void App::createWindow(){
 	m_window = glfwCreateWindow(m_width, m_height, "Jynx", NULL, NULL);
 	if(m_window == NULL){
 		std::cerr << "Failed to create GLFW window." << std::endl;
@@ -51,18 +64,14 @@ void App::setupGLFW(){
 	}
 
 	glfwMakeContextCurrent(m_window);
+}
 
-	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-		std::cerr << "Failed to initialise GLAD." << std::endl;
-		glfwTerminate();
-		exit(-1);
-	}
-
+void App::GLFWSettings(){
 	// Sets the App instance as the window user pointer
-	// Needed for the framebuffer size callback to work
-	glfwSetWindowUserPointer(m_window, this); 
+	glfwSetWindowUserPointer(m_window, this); // Needed for the framebuffer size callback to work
 	glViewport(0, 0, m_width, m_height);
 	glfwSetFramebufferSizeCallback(m_window, framebufferSizeCallback);
+	
 	if(DEBUG_MODE) std::cout << "GLFW is ready!\n";
 }
 
@@ -70,10 +79,10 @@ void App::setupOpenGL(){
 	if(DEBUG_MODE) std::cout << "Setting up OpenGL...\n";
 	glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
 	
-	//glEnable(GL_DEPTH_TEST);
-	//glDepthFunc(GL_LESS);
-	//glEnable(GL_CULL_FACE);
-	//glCullFace(GL_BACK);
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
 	if(DEBUG_MODE) std::cout << "OpenGL is ready!\n";
 
 	m_shader = linkShader(

@@ -16,7 +16,10 @@ private:
 
 	unsigned int m_shader;
 
-	void setupGLFW();
+	void loadGLFW();
+	void loadGLAD();
+	void createWindow();
+	load GLFWSettings();
 	void setupOpenGL();
 	static void framebufferSizeCallback(GLFWwindow* window, int width, int height);
 	void onFramebufferSizeChange(int width, int height);

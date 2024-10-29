@@ -12,8 +12,8 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-#include "../include/core/config.h"
-#include "../include/core/app.h"
+#include "include/core/config.h"
+#include "include/core/app.h"
 
 int main(){
 	App app;
