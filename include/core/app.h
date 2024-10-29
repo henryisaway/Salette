@@ -19,7 +19,7 @@ private:
 	void loadGLFW();
 	void loadGLAD();
 	void createWindow();
-	load GLFWSettings();
+	void GLFWSettings();
 	void setupOpenGL();
 	static void framebufferSizeCallback(GLFWwindow* window, int width, int height);
 	void onFramebufferSizeChange(int width, int height);

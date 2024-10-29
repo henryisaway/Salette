@@ -2,8 +2,8 @@
 
 App::App(){
 	loadGLFW();
-	loadGLAD();
 	createWindow();
+	loadGLAD();
 	GLFWSettings();
 	makeSystems(m_window);
 }
@@ -47,14 +47,6 @@ void App::loadGLFW(){
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 }
 
-void App::loadGLAD(){
-	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-		std::cerr << "Failed to initialise GLAD." << std::endl;
-		glfwTerminate();
-		exit(-1);
-	}
-}
-
 void App::createWindow(){
 	m_window = glfwCreateWindow(m_width, m_height, "Jynx", NULL, NULL);
 	if(m_window == NULL){
@@ -64,6 +56,14 @@ void App::createWindow(){
 	}
 
 	glfwMakeContextCurrent(m_window);
+}
+
+void App::loadGLAD(){
+	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+		std::cerr << "Failed to initialise GLAD." << std::endl;
+		glfwTerminate();
+		exit(-1);
+	}
 }
 
 void App::GLFWSettings(){
@@ -79,10 +79,10 @@ void App::setupOpenGL(){
 	if(DEBUG_MODE) std::cout << "Setting up OpenGL...\n";
 	glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
 	
-	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_LESS);
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_BACK);
+	//glEnable(GL_DEPTH_TEST);
+	//glDepthFunc(GL_LESS);
+	//glEnable(GL_CULL_FACE);
+	//glCullFace(GL_BACK);
 	if(DEBUG_MODE) std::cout << "OpenGL is ready!\n";
 
 	m_shader = linkShader(
