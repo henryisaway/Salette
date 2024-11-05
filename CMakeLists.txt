@@ -32,6 +32,7 @@ add_executable(Jynx
             src/events/inputHandler.cpp
             src/shader/shaderLinker.cpp
             src/factory/factory.cpp
+            src/renderer/OpenGLRenderContext.cpp
             src/core/app.cpp
             )
 
