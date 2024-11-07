@@ -11,7 +11,7 @@ App::~App(){
 void App::run(){
 	renderer->setupOpenGL();
 
-	primitiveModels->makeTriangle();
+	primitiveModels->makeQuad();
 
 	while(!glfwWindowShouldClose(m_window)){
 		glClear(GL_COLOR_BUFFER_BIT);

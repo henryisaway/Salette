@@ -18,8 +18,8 @@ private:
 	static void framebufferSizeCallback(GLFWwindow* window, int width, int height);
 	void onFramebufferSizeChange(int width, int height);
 
-	const size_t m_width = 800;
-	const size_t m_height = 600;
+	const size_t m_width = 700;
+	const size_t m_height = 700;
 
 	GLFWwindow* m_window;
 };
