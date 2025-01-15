@@ -38,3 +38,14 @@ add_executable(Jynx
 
 # Link libraries
 target_link_libraries(Jynx glfw OpenGL::GL)
+
+# --- Google Tests ---
+enable_testing()
+
+add_executable(Tests 
+            tests/testmain.cpp
+            tests/windowmanager/OpenGLWindowHandleTest.cpp
+            src/windowmanager/OpenGLWindowHandle.cpp
+            )
+target_link_libraries(Tests gtest gtest_main pthread glfw)
+add_test(NAME Tests COMMAND Tests)

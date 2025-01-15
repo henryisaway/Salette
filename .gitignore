@@ -1,4 +1,4 @@
 assets/img
 build
-run.sh
+*.sh
 designdoc.md
