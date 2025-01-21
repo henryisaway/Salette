@@ -34,8 +34,6 @@ OpenGLWindowHandle::OpenGLWindowHandle(int width, int height, const std::string&
 			handle->m_Height = newHeight;
 		}
 	});
-
-	// Then go back to the window handler and implement the backendCreateWindow.
 }
 
 void* OpenGLWindowHandle::getNativeHandle() const {

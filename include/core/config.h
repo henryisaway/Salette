@@ -8,5 +8,6 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <algorithm>
 
 #define DEBUG_MODE 1

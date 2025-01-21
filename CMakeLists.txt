@@ -48,7 +48,9 @@ add_executable(Tests
             dependencies/glad/src/glad.c
             tests/testmain.cpp
             src/windowmanager/OpenGLWindowHandle.cpp
+            src/windowmanager/WindowManager.cpp
             tests/windowmanager/OpenGLWindowHandleTest.cpp
+            tests/windowmanager/WindowManagerTest.cpp
             )
 target_link_libraries(Tests gtest gtest_main pthread glfw OpenGL::GL)
 add_test(NAME Tests COMMAND Tests)
