@@ -1,9 +1,13 @@
 #include "WindowManagerTest.h"
 
 void WindowManagerTest::SetUp(){
+	if (!glfwInit()) {
+		FAIL() << "Failed to initialize GLFW in test setup.";
+	}
 }
 
 void WindowManagerTest::TearDown(){
+	glfwTerminate();
 }
 
 TEST_F(WindowManagerTest, CreateWindowReturnsNonNull){
