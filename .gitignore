@@ -2,3 +2,4 @@ assets/img
 build
 *.sh
 designdoc.md
+tests
