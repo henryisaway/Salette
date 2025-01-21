@@ -31,8 +31,9 @@ add_executable(Jynx
             dependencies/glad/src/glad.c
             src/events/inputHandler.cpp
             src/shader/shaderLinker.cpp
+            src/windowmanager/OpenGLWindowHandle.cpp
+            src/windowmanager/WindowManager.cpp
             src/factory/factory.cpp
-            src/renderer/OpenGLRenderContext.cpp
             src/core/app.cpp
             )
 
