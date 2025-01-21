@@ -7,11 +7,10 @@ Jynx is a custom general-purpose 2D/3D graphics engine designed for flexibility,
 ## Features
 
 - **Lightweight**: Good for fast rendering and efficient resource management.
-- **Flexible API**: A high-level Lua interface allows for easier scripting and rapid iteration.
+- **Flexible API**: A high-level Lua interface allows for easier scripting and rapid iteration (TBD).
 - **Mod-Friendly Architecture**: Designed to facilitate modding in games, ensuring ease of use for both developers and end-users.
-- **Asset Management**: Future features include a comprehensive asset manager to streamline asset handling.
 - **Support for 2D and 3D Rendering**: Capable of rendering both 2D and 3D graphics.
-- **Custom Shaders**: Create stunning visuals with the ability to implement custom shaders.
+- **Custom Shaders**: Create stunning visuals with the ability to implement custom shaders (TBD).
 
 ## Getting Started
 
@@ -63,38 +62,40 @@ For inquiries or support, feel free to reach out:
 
 ## Roadmap
 Please note that these are not hard deadlines. Features may be implemented ahead of time or after the ETA.
-### Q4 2024: Return of Development & New Features
+### Q1 2025: Codebase overhaul
 - **Restructuring of the codebase**
   - Better implementation of the ECS architecture and organisation of the project.
-- **Basic 3D Rendering**
-  - Achieve basic 3D rendering capabilities; support for imported 3D models and built-in primitive models.
 - **Basic 2D Rendering**
   - Achieve basic 2D rendering capabilities; support for 2D images and built-in shapes.
+- **Basic 3D Rendering**
+  - Achieve basic 3D rendering capabilities; support for imported 3D models and built-in primitive models.
 - **Basic Input Handling**
   - Support for interactions with keyboard and mouse input.
   
-### Q1 2025: Core Engine Features
+### Q2 2025: Core Engine Features
 - **Asset Management System**
   - Develop a modular asset manager for handling textures, models, and sounds.
 - **Custom Shaders**
   - Implement a system for end user to create and utilize custom shaders.
 - **Lua API Integration**
-  - Complete integration of the high-level Lua API for user scripting.
+  - Integration of the high-level Lua API for user scripting.
 
-### Q2 2025: Advanced Features
+### Q3 2025: Advanced Features
 - **Advanced 2D Rendering Support**
   - Add features for rendering advanced 2D graphics, including animated sprites and UI elements.
 - **Advanced 3D Rendering Support**
-  - Add features for rendering advanced 3D graphics, including animated 3D models
+  - Add features for rendering advanced 3D graphics, including animated 3D models.
 - **Physics Simulation**
   - Implement basic physics interactions and collision detection.
 
-### Q3 2025: Multi-threading & Modding Support
+### Q4 2025: Multi-threading & Modding Support
 - **Multi-threading Support**
   - Optimize performance with multi-threaded rendering and resource loading.
 - **Mod-Friendly Architecture**
   - Refactor the engine to support user-generated content and mods.
  
-### Q4 2025 and Beyond
+### 2026 and Beyond
 - **Advanced Features**
   - Introduce advanced rendering techniques (e.g., post-processing, lighting models).
+- **Vulkan backend**
+  - Introduce a Vulkan backend implementation for Jynx's rendering engine.
