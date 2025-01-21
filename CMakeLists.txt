@@ -43,9 +43,12 @@ target_link_libraries(Jynx glfw OpenGL::GL)
 enable_testing()
 
 add_executable(Tests 
+            include/core/config.h
+            src/core/config.cpp
+            dependencies/glad/src/glad.c
             tests/testmain.cpp
-            tests/windowmanager/OpenGLWindowHandleTest.cpp
             src/windowmanager/OpenGLWindowHandle.cpp
+            tests/windowmanager/OpenGLWindowHandleTest.cpp
             )
-target_link_libraries(Tests gtest gtest_main pthread glfw)
+target_link_libraries(Tests gtest gtest_main pthread glfw OpenGL::GL)
 add_test(NAME Tests COMMAND Tests)

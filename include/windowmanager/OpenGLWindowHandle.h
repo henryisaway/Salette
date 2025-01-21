@@ -5,8 +5,7 @@
 class OpenGLWindowHandle : public WindowHandle{
 public:
 
-	OpenGLWindowHandle(GLFWwindow* window, const std::string& title);
-	~OpenGLWindowHandle();
+	OpenGLWindowHandle(int width, int height, const std::string& title);
 
 	// --- Window Information ---
 	void* getNativeHandle() const override; // Returns the GLFW window pointer
@@ -17,7 +16,7 @@ public:
 
 private:
 
-	GLFWwindow* m_Window;
+	std::shared_ptr<GLFWwindow> m_Window;
 	std::string m_Title;
 	int m_Width;
 	int m_Height;

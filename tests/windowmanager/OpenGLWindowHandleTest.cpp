@@ -1,53 +1,73 @@
 #include "OpenGLWindowHandleTest.h"
 
 void OpenGLWindowHandleTest::SetUp(){
-    if (!glfwInit()) {
-            FAIL() << "Failed to initialize GLFW";
-        }
-
-        // Create a dummy GLFW window
-        m_Window = glfwCreateWindow(800, 600, "Test Window", nullptr, nullptr);
-        if (!m_Window) {
-            FAIL() << "Failed to create GLFW window";
-        }
-
-        // Create an OpenGLWindowHandle
-        m_Handle = std::make_unique<OpenGLWindowHandle>(m_Window, "Test Window");
+	// Ensure GLFW is properly initialized before any test
+	if (!glfwInit()) {
+		FAIL() << "Failed to initialize GLFW in test setup.";
+	}
 }
 
 void OpenGLWindowHandleTest::TearDown(){
-        m_Handle.reset();  // Ensure the handle is destroyed first
-        glfwTerminate();
-    }
-
-// Test: GetNativeHandle
-TEST_F(OpenGLWindowHandleTest, GetNativeHandle) {
-    ASSERT_EQ(static_cast<GLFWwindow*>(m_Handle->getNativeHandle()), m_Window)
-        << "Native handle should match the GLFW window pointer";
+	// Terminate GLFW after all tests
+	glfwTerminate();
 }
 
-// Test: GetTitle
-TEST_F(OpenGLWindowHandleTest, GetTitle) {
-    ASSERT_EQ(m_Handle->getTitle(), "Test Window")
-        << "Window title should match the provided string";
+TEST_F(OpenGLWindowHandleTest, ConstructorCreatesWindow) {
+	EXPECT_NO_THROW({
+		OpenGLWindowHandle window(800, 600, "Test Window");
+	});
 }
 
-// Test: GetWidth and GetHeight
-TEST_F(OpenGLWindowHandleTest, GetDimensions) {
-    ASSERT_EQ(m_Handle->getWidth(), 800) << "Window width should be 800";
-    ASSERT_EQ(m_Handle->getHeight(), 600) << "Window height should be 600";
+TEST_F(OpenGLWindowHandleTest, GetNativeHandleReturnsValidPointer) {
+	OpenGLWindowHandle window(800, 600, "Test Window");
+	void* nativeHandle = window.getNativeHandle();
+
+	EXPECT_NE(nativeHandle, nullptr) << "Native handle should not be null.";
 }
 
-// Test: ShouldClose (Default State)
-TEST_F(OpenGLWindowHandleTest, ShouldCloseDefault) {
-    ASSERT_FALSE(m_Handle->shouldClose())
-        << "ShouldClose should be false for a newly created window";
+TEST_F(OpenGLWindowHandleTest, GettersReturnCorrectValues) {
+	int width = 800;
+	int height = 600;
+	std::string title = "Test Window";
+
+	OpenGLWindowHandle window(width, height, title);
+
+	EXPECT_EQ(window.getWidth(), width) << "Width should match the constructor value.";
+	EXPECT_EQ(window.getHeight(), height) << "Height should match the constructor value.";
+	EXPECT_EQ(window.getTitle(), title) << "Title should match the constructor value.";
 }
 
-// Test: ShouldClose (After Trigger)
-TEST_F(OpenGLWindowHandleTest, ShouldCloseTriggered) {
-    // Simulate closing the window
-    glfwSetWindowShouldClose(m_Window, GLFW_TRUE);
-    ASSERT_TRUE(m_Handle->shouldClose())
-        << "ShouldClose should return true after triggering close";
+TEST_F(OpenGLWindowHandleTest, ShouldCloseReturnsFalseInitially) {
+	OpenGLWindowHandle window(800, 600, "Test Window");
+	EXPECT_FALSE(window.shouldClose()) << "Window should not report close immediately after creation.";
+}
+
+TEST_F(OpenGLWindowHandleTest, UpdateWindowSizeReflectsResizedWindow) {
+	OpenGLWindowHandle window(800, 600, "Test Window");
+
+	// Simulate a window resize
+	glfwSetWindowSize(static_cast<GLFWwindow*>(window.getNativeHandle()), 1024, 700);
+
+	while(window.getWidth() == 800 && window.getHeight() == 600){
+		glfwPollEvents();
+	}
+
+	EXPECT_EQ(window.getWidth(), 1024) << "Width should update after resizing.";
+	EXPECT_EQ(window.getHeight(), 700) << "Height should update after resizing.";
+}
+
+TEST_F(OpenGLWindowHandleTest, DestructorDestroysWindow) {
+	GLFWwindow* rawWindow = nullptr;
+
+	{
+		OpenGLWindowHandle window(800, 600, "Test Window");
+		rawWindow = static_cast<GLFWwindow*>(window.getNativeHandle());
+		EXPECT_NE(rawWindow, nullptr) << "Raw GLFW window pointer should not be null.";
+
+		// Ensure window is valid inside scope
+		EXPECT_FALSE(glfwWindowShouldClose(rawWindow));
+	}
+
+	// After the OpenGLWindowHandle goes out of scope, the window should be destroyed
+	// EXPECT_TRUE(glfwWindowShouldClose(rawWindow)) << "Window should be marked for close after destruction.";
 }

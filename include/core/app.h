@@ -13,6 +13,9 @@ public:
 private:
 	void makeSystems();
 
+	// Remember to get rid of the window and renderer here.
+	// Get App a window manager.
+
 	GLFWwindow* m_window;
 
 	// Systems
