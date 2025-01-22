@@ -11,4 +11,5 @@ public:
 	virtual int getWidth() const = 0;
 	virtual int getHeight() const = 0;
 	virtual bool shouldClose() const = 0;
+	virtual void setClearColour(float r, float g, float b, float a) = 0;
 };

@@ -1,13 +1,10 @@
 #include "../../include/windowmanager/WindowManager.h"
 
 WindowManager::WindowManager(){
-	if (!glfwInit()) {
-		std::runtime_error("Failed to initialize GLFW in test setup.");
-	}
 }
 
 WindowManager::~WindowManager(){
-	glfwTerminate();
+	
 }
 
 std::shared_ptr<WindowHandle> WindowManager::createWindow(int width, int height, const std::string& title){

@@ -1,18 +1,24 @@
 #include "../../include/core/app.h"
 
 App::App(){
+	if (!glfwInit()) {
+		std::runtime_error("Failed to initialize GLFW.");
+	}
+
 	makeSystems();
 }
 
 App::~App(){
-
+	glfwTerminate();
 }
 
 void App::run(){
 	//renderer->setupOpenGL();
-	windowManager->createWindow(800, 600, "Jynx - Now with WindowManager!");
 
-	while(1){
+	std::shared_ptr window_ptr = windowManager->createWindow(800, 600, "Jynx - Now with WindowManager!");
+
+	//window_ptr->setClearColour(0.4f, 0.4f, 0.4f, 1.0f);
+	while(!window_ptr->shouldClose()){
 		// glClear(GL_COLOR_BUFFER_BIT);
 		//primitiveModels->draw(renderer->getShader());
 		// glfwSwapBuffers(m_window);

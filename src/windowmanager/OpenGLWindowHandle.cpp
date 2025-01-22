@@ -1,15 +1,6 @@
 #include "../../include/windowmanager/OpenGLWindowHandle.h"
 
 OpenGLWindowHandle::OpenGLWindowHandle(int width, int height, const std::string& title) : m_Width(width), m_Height(height), m_Title(title){
-	
-	if(!glfwInit()){
-		throw std::runtime_error("Failed to initialize GLFW");
-	}
-
-	glfwSetErrorCallback([](int error, const char* description) {
-	    std::cerr << "GLFW error (" << error << "): " << description << std::endl;
-	});
-
 	// This creates the window proper; The second argument is a custom destructor for the GLFWwindow type
 	m_Window = std::shared_ptr<GLFWwindow>(glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr), 
 		[](GLFWwindow* ptr) {
@@ -54,4 +45,8 @@ int OpenGLWindowHandle::getHeight() const {
 
 bool OpenGLWindowHandle::shouldClose() const {
 	return glfwWindowShouldClose(m_Window.get());
+}
+
+void OpenGLWindowHandle::setClearColour(float r, float g, float b, float a){
+	glClearColor(r, g, b, a);
 }
