@@ -16,6 +16,10 @@ void App::run(){
 	//renderer->setupOpenGL();
 
 	auto window_ptr = windowManager->createWindow(800, 600, "Jynx - Now with WindowManager!");
+	windowManager->createWindow(800, 600, "Jynx 1");
+	windowManager->createWindow(800, 600, "Jynx 2");
+	windowManager->createWindow(800, 600, "Jynx 3");
+	windowManager->createWindow(800, 600, "Jynx 4");
 	
 	glfwMakeContextCurrent((GLFWwindow*)window_ptr->getNativeHandle());
 
@@ -25,12 +29,21 @@ void App::run(){
 		exit(-1);
 	}
 
-	window_ptr->setClearColour(0.4f, 0.4f, 0.4f, 1.0f);
+	auto windows = windowManager->getWindows();
 
-	while(!window_ptr->shouldClose()){
-		glClear(GL_COLOR_BUFFER_BIT);
-		//primitiveModels->draw(renderer->getShader());
-		glfwSwapBuffers((GLFWwindow*)window_ptr->getNativeHandle());
+	for(auto window : windows){
+		glfwMakeContextCurrent((GLFWwindow*)window->getNativeHandle());
+		window->setClearColour(0.4f, 0.4f, 0.4f, 1.0f);
+	}
+
+	while(windowManager->isRunning()){
+		for(auto window : windows){
+			// These two tasks should be delegated to a renderer]
+			glfwMakeContextCurrent((GLFWwindow*)window->getNativeHandle());
+			glClear(GL_COLOR_BUFFER_BIT);
+			glfwSwapBuffers((GLFWwindow*)window->getNativeHandle());
+		}
+
 		windowManager->pollEvents();
 	}
 

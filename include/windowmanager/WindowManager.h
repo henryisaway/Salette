@@ -10,9 +10,11 @@ public:
 
 	// --- Basic Windowing functionality ---
 	WindowHandle* createWindow(int width, int height, const std::string& title);
+	std::vector<WindowHandle*>& getWindows();
 	void pollEvents();
 	void closeWindow(WindowHandle* window);
+	bool isRunning();
 
 private:
-	std::vector<WindowHandle*> windows;
+	std::vector<WindowHandle*> m_Windows;
 };
