@@ -1,13 +1,8 @@
 #include "../../include/windowmanager/OpenGLWindowHandle.h"
 
 OpenGLWindowHandle::OpenGLWindowHandle(int width, int height, const std::string& title) : m_Width(width), m_Height(height), m_Title(title){
-	// This creates the window proper; The second argument is a custom destructor for the GLFWwindow type
-	m_Window = std::shared_ptr<GLFWwindow>(glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr), 
-		[](GLFWwindow* ptr) {
-		if(ptr){
-			glfwDestroyWindow(ptr);
-		}
-	});
+	// This creates the window proper;
+	m_Window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
 
 	if(!m_Window){
 		glfwTerminate();
@@ -15,10 +10,10 @@ OpenGLWindowHandle::OpenGLWindowHandle(int width, int height, const std::string&
 	}
 
 	// Set this instance as the user pointer for the window, needed for the window size callback.
-	glfwSetWindowUserPointer(m_Window.get(), this);
+	glfwSetWindowUserPointer(m_Window, this);
 
 	// Set a size callback to keep the dimensions updated
-	glfwSetWindowSizeCallback(m_Window.get(), [](GLFWwindow* window, int newWidth, int newHeight) {
+	glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int newWidth, int newHeight) {
 		auto* handle = static_cast<OpenGLWindowHandle*>(glfwGetWindowUserPointer(window));
 		if (handle) {
 			handle->m_Width = newWidth;
@@ -27,8 +22,12 @@ OpenGLWindowHandle::OpenGLWindowHandle(int width, int height, const std::string&
 	});
 }
 
+OpenGLWindowHandle::~OpenGLWindowHandle(){
+	glfwDestroyWindow(m_Window);
+}
+
 void* OpenGLWindowHandle::getNativeHandle() const {
-	return reinterpret_cast<void*>(m_Window.get()); // Returns raw pointer to the window
+	return reinterpret_cast<void*>(m_Window); // Returns raw pointer to the window
 }
 
 const std::string& OpenGLWindowHandle::getTitle() const {
@@ -44,7 +43,7 @@ int OpenGLWindowHandle::getHeight() const {
 }
 
 bool OpenGLWindowHandle::shouldClose() const {
-	return glfwWindowShouldClose(m_Window.get());
+	return glfwWindowShouldClose(m_Window);
 }
 
 void OpenGLWindowHandle::setClearColour(float r, float g, float b, float a){

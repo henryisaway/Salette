@@ -15,13 +15,22 @@ App::~App(){
 void App::run(){
 	//renderer->setupOpenGL();
 
-	std::shared_ptr window_ptr = windowManager->createWindow(800, 600, "Jynx - Now with WindowManager!");
+	auto window_ptr = windowManager->createWindow(800, 600, "Jynx - Now with WindowManager!");
+	
+	glfwMakeContextCurrent((GLFWwindow*)window_ptr->getNativeHandle());
 
-	//window_ptr->setClearColour(0.4f, 0.4f, 0.4f, 1.0f);
+	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+		std::cerr << "Failed to initialise GLAD." << std::endl;
+		glfwTerminate();
+		exit(-1);
+	}
+
+	window_ptr->setClearColour(0.4f, 0.4f, 0.4f, 1.0f);
+
 	while(!window_ptr->shouldClose()){
-		// glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT);
 		//primitiveModels->draw(renderer->getShader());
-		// glfwSwapBuffers(m_window);
+		glfwSwapBuffers((GLFWwindow*)window_ptr->getNativeHandle());
 		windowManager->pollEvents();
 	}
 

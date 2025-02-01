@@ -9,10 +9,10 @@ public:
 	~WindowManager();
 
 	// --- Basic Windowing functionality ---
-	std::shared_ptr<WindowHandle> createWindow(int width, int height, const std::string& title);
+	WindowHandle* createWindow(int width, int height, const std::string& title);
 	void pollEvents();
-	void closeWindow(std::shared_ptr<WindowHandle> window);
+	void closeWindow(WindowHandle* window);
 
 private:
-	std::vector<std::shared_ptr<WindowHandle>> windows;
+	std::vector<WindowHandle*> windows;
 };
