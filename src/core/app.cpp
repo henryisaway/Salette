@@ -1,10 +1,7 @@
 #include "../../include/core/app.h"
 
 App::App(){
-	if (!glfwInit()) {
-		std::runtime_error("Failed to initialize GLFW.");
-	}
-
+	startup("Jynx Project");
 	makeSystems();
 }
 
@@ -14,21 +11,6 @@ App::~App(){
 
 void App::run(){
 	//renderer->setupOpenGL();
-
-	auto window_ptr = windowManager->createWindow(800, 600, "Jynx - Now with WindowManager!");
-	windowManager->createWindow(800, 600, "Jynx 1");
-	windowManager->createWindow(800, 600, "Jynx 2");
-	windowManager->createWindow(800, 600, "Jynx 3");
-	windowManager->createWindow(800, 600, "Jynx 4");
-	
-	glfwMakeContextCurrent((GLFWwindow*)window_ptr->getNativeHandle());
-
-	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-		std::cerr << "Failed to initialise GLAD." << std::endl;
-		glfwTerminate();
-		exit(-1);
-	}
-
 	auto windows = windowManager->getWindows();
 
 	for(auto window : windows){
@@ -37,7 +19,7 @@ void App::run(){
 	}
 
 	while(windowManager->isRunning()){
-		windows = windowManager->getWindows();
+		windows = windowManager->getWindows(); // This is needed to keep the list updated on opened/closed windows
 
 		for(auto window : windows){
 			// These two tasks should be delegated to a renderer]
@@ -63,4 +45,29 @@ void App::makeSystems(){
 	//keyboardHandler = std::make_unique<KeyboardHandler>(m_window);
 	//primitiveModels = std::make_unique<PrimitiveModels>();
 	windowManager = std::make_unique<WindowManager>();
+}
+
+
+void App::startup(const std::string& windowTitle){
+	// GLFW initialisation
+	if (!glfwInit()) {
+		std::runtime_error("Failed to initialize GLFW.");
+	}
+
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+	if(DEBUG_MODE) std::cout << "GLFW is ready!\n";
+
+	// Creating main window;
+	auto window_ptr = windowManager->createWindow(800, 600, windowTitle);
+	glfwMakeContextCurrent((GLFWwindow*)window_ptr->getNativeHandle());
+
+	// Setting up GLAD
+	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+		std::cerr << "Failed to initialise GLAD." << std::endl;
+		glfwTerminate();
+		exit(-1);
+	}
 }

@@ -29,7 +29,7 @@ void WindowManager::closeWindow(WindowHandle* window) {
         // Remove the window from the vector
         m_Windows.erase(it);
 
-        delete window;
+        delete window; //WindowHandle destructor will destroy the window upon deletion.
     } else {
         std::cerr << "Attempted to close a window that does not exist in the manager.\n";
     }

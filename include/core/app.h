@@ -13,15 +13,8 @@ public:
 
 private:
 	void makeSystems();
-
-	// Remember to get rid of the window and renderer here.
-	// Get App a window manager.
-
-	// std::shared_ptr<WindowHandle> m_window;
-
+	void startup(const std::string& windowTitle);
 	// Systems
-	//std::unique_ptr<OpenGL> renderer;
 	//std::unique_ptr<KeyboardHandler> keyboardHandler;
-	//std::unique_ptr<PrimitiveModels> primitiveModels;
 	std::unique_ptr<WindowManager> windowManager;
 };
