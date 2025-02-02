@@ -37,9 +37,17 @@ void App::run(){
 	}
 
 	while(windowManager->isRunning()){
+		windows = windowManager->getWindows();
+
 		for(auto window : windows){
 			// These two tasks should be delegated to a renderer]
 			glfwMakeContextCurrent((GLFWwindow*)window->getNativeHandle());
+
+			if(window->shouldClose()){
+				windowManager->closeWindow(window);
+				continue;
+			}
+
 			glClear(GL_COLOR_BUFFER_BIT);
 			glfwSwapBuffers((GLFWwindow*)window->getNativeHandle());
 		}
