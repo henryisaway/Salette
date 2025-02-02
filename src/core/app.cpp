@@ -1,8 +1,8 @@
 #include "../../include/core/app.h"
 
 App::App(){
-	startup("Jynx Project");
 	makeSystems();
+	startup("Jynx Project");
 }
 
 App::~App(){
@@ -70,4 +70,6 @@ void App::startup(const std::string& windowTitle){
 		glfwTerminate();
 		exit(-1);
 	}
+
+	if(DEBUG_MODE) std::cout << "GLAD is ready!\n";
 }
