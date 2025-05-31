@@ -10,11 +10,11 @@ App::~App(){
 }
 
 void App::run(){
-	auto windows = windowManager->getWindows();
+	std::vector<WindowHandle*>& windows = windowManager->getWindows();
 
 	// Loop through each open window
 	// Run any general renderer settings here
-	for(auto window : windows){
+	for(WindowHandle* window : windows){
 		glfwMakeContextCurrent((GLFWwindow*)window->getNativeHandle());
 		window->setClearColour(0.4f, 0.4f, 0.4f, 1.0f); // In this case, this just sets the clear colour for every window
 	}
@@ -22,7 +22,7 @@ void App::run(){
 	while(windowManager->isRunning()){
 		windows = windowManager->getWindows(); // This is needed to keep the list updated on opened/closed windows
 
-		for(auto window : windows){
+		for(WindowHandle* window : windows){
 			glfwMakeContextCurrent((GLFWwindow*)window->getNativeHandle()); // Focus on the current window
 
 			// Check if it should close
