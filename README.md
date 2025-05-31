@@ -1,8 +1,6 @@
-# Jynx
+Vista is a custom general-purpose 2D/3D graphics engine designed for flexibility, performance, and ease of use. Built on C++ with a (yet-to-come) high-level Lua API, Vista aims to provide tools for creating visual experiences, whether in gaming or other graphical applications.
 
-Jynx is a custom general-purpose 2D/3D graphics engine designed for flexibility, performance, and ease of use. Built on C++ with a (yet-to-come) high-level Lua API, Jynx aims to provide tools for creating visual experiences, whether in gaming or other graphical applications.
-
-> Note: Jynx is a personal, non-profit and educational project being developed by me alone, and is currently under heavy development. The engine is far from feature complete and ETA for new features may change over time.
+> Note: Vista is a personal, non-profit and educational project being developed by me alone, and is currently under heavy development. The engine is far from feature complete and ETA for new features may change over time.
 
 ## Features
 
@@ -46,7 +44,7 @@ Jynx is a custom general-purpose 2D/3D graphics engine designed for flexibility,
 
 5. Run the executable:
    ```bash
-   ./Jynx
+   ./Vista
    ```
 
 ## License
@@ -62,7 +60,7 @@ For inquiries or support, feel free to reach out:
 
 ## Roadmap
 Please note that these are not hard deadlines. Features may be implemented ahead of time or after the ETA.
-### Q1 2025: Codebase overhaul
+### Q2 2025: Codebase overhaul
 - **Restructuring of the codebase**
   - Better implementation of the ECS architecture and organisation of the project.
 - **Basic 2D Rendering**
@@ -72,7 +70,7 @@ Please note that these are not hard deadlines. Features may be implemented ahead
 - **Basic Input Handling**
   - Support for interactions with keyboard and mouse input.
   
-### Q2 2025: Core Engine Features
+### Q3 2025: Core Engine Features
 - **Asset Management System**
   - Develop a modular asset manager for handling textures, models, and sounds.
 - **Custom Shaders**
@@ -80,22 +78,18 @@ Please note that these are not hard deadlines. Features may be implemented ahead
 - **Lua API Integration**
   - Integration of the high-level Lua API for user scripting.
 
-### Q3 2025: Advanced Features
+### Q4 2025: Advanced Features
 - **Advanced 2D Rendering Support**
   - Add features for rendering advanced 2D graphics, including animated sprites and UI elements.
 - **Advanced 3D Rendering Support**
   - Add features for rendering advanced 3D graphics, including animated 3D models.
 - **Physics Simulation**
   - Implement basic physics interactions and collision detection.
-
-### Q4 2025: Multi-threading & Modding Support
-- **Multi-threading Support**
-  - Optimize performance with multi-threaded rendering and resource loading.
-- **Mod-Friendly Architecture**
-  - Refactor the engine to support user-generated content and mods.
  
 ### 2026 and Beyond
 - **Advanced Features**
   - Introduce advanced rendering techniques (e.g., post-processing, lighting models).
+- **Multi-threading Support**
+  - Optimize performance with multi-threaded rendering and resource loading.
 - **Vulkan backend**
-  - Introduce a Vulkan backend implementation for Jynx's rendering engine.
+  - Introduce a Vulkan backend implementation for Vista's rendering engine.

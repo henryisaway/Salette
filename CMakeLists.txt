@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(Jynx)
+project(Vista)
 cmake_policy(SET CMP0072 NEW)
 
 # Set C++ standard
@@ -24,7 +24,7 @@ set(GLM_ROOT "${CMAKE_SOURCE_DIR}/dependencies/glm")
 include_directories(${GLM_ROOT}/include)
 
 # Add executable
-add_executable(Jynx
+add_executable(Vista
             include/core/config.h
             src/core/config.cpp
             main.cpp
@@ -38,7 +38,7 @@ add_executable(Jynx
             )
 
 # Link libraries
-target_link_libraries(Jynx glfw OpenGL::GL)
+target_link_libraries(Vista glfw OpenGL::GL)
 
 # --- Google Tests ---
 enable_testing()

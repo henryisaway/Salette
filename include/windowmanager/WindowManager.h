@@ -16,5 +16,5 @@ public:
 	bool isRunning();
 
 private:
-	std::vector<WindowHandle*> m_Windows;
+	std::vector<WindowHandle*> m_Windows; // List of all running windows
 };

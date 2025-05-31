@@ -31,7 +31,7 @@ void WindowManager::closeWindow(WindowHandle* window) {
 
         delete window; //WindowHandle destructor will destroy the window upon deletion.
     } else {
-        std::cerr << "Attempted to close a window that does not exist in the manager.\n";
+        std::cerr << "Attempted to close a window that does not exist.\n";
     }
 }
 

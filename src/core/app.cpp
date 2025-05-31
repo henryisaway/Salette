@@ -2,7 +2,7 @@
 
 App::App(){
 	makeSystems();
-	startup("Jynx Project");
+	startup("Vista");
 }
 
 App::~App(){
@@ -10,26 +10,28 @@ App::~App(){
 }
 
 void App::run(){
-	//renderer->setupOpenGL();
 	auto windows = windowManager->getWindows();
 
+	// Loop through each open window
+	// Run any general renderer settings here
 	for(auto window : windows){
 		glfwMakeContextCurrent((GLFWwindow*)window->getNativeHandle());
-		window->setClearColour(0.4f, 0.4f, 0.4f, 1.0f);
+		window->setClearColour(0.4f, 0.4f, 0.4f, 1.0f); // In this case, this just sets the clear colour for every window
 	}
 
 	while(windowManager->isRunning()){
 		windows = windowManager->getWindows(); // This is needed to keep the list updated on opened/closed windows
 
 		for(auto window : windows){
-			// These two tasks should be delegated to a renderer]
-			glfwMakeContextCurrent((GLFWwindow*)window->getNativeHandle());
+			glfwMakeContextCurrent((GLFWwindow*)window->getNativeHandle()); // Focus on the current window
 
+			// Check if it should close
 			if(window->shouldClose()){
 				windowManager->closeWindow(window);
 				continue;
 			}
 
+			//Run any rendering calls directed at this window over here
 			glClear(GL_COLOR_BUFFER_BIT);
 			glfwSwapBuffers((GLFWwindow*)window->getNativeHandle());
 		}
@@ -43,7 +45,6 @@ void App::run(){
 void App::makeSystems(){
 	//renderer = std::make_unique<OpenGL>();
 	//keyboardHandler = std::make_unique<KeyboardHandler>(m_window);
-	//primitiveModels = std::make_unique<PrimitiveModels>();
 	windowManager = std::make_unique<WindowManager>();
 }
 
@@ -54,6 +55,7 @@ void App::startup(const std::string& windowTitle){
 		std::runtime_error("Failed to initialize GLFW.");
 	}
 
+	// Requires OpenGL 3.3 or higher
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -61,7 +63,7 @@ void App::startup(const std::string& windowTitle){
 	if(DEBUG_MODE) std::cout << "GLFW is ready!\n";
 
 	// Creating main window;
-	auto window_ptr = windowManager->createWindow(800, 600, windowTitle);
+	auto window_ptr = windowManager->createWindow(800, 550, windowTitle);
 	glfwMakeContextCurrent((GLFWwindow*)window_ptr->getNativeHandle());
 
 	// Setting up GLAD
