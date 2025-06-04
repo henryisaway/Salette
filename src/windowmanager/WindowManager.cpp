@@ -1,9 +1,12 @@
 #include "../../include/windowmanager/WindowManager.h"
 
 WindowManager::WindowManager(){
+    std::cout << "Window Manager instance has been created\n";
 }
 
-WindowManager::~WindowManager(){
+WindowManager& WindowManager::getInstance(){
+    static WindowManager instance; 
+    return instance;
 }
 
 WindowHandle* WindowManager::createWindow(int width, int height, const std::string& title){

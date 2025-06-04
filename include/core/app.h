@@ -7,14 +7,17 @@
 
 class App{
 public:
-	App();
-	~App();
 	void run();
 
+	static App& getInstance();
+
 private:
+
+	App();
+	App(const App&) = delete; 				// Deleting copying operation
+	App operator=(const App&) = delete;		// Deleting assignment operation
+
 	void makeSystems();
 	void startup(const std::string& windowTitle);
-	// Systems
-	//std::unique_ptr<KeyboardHandler> keyboardHandler;
-	std::unique_ptr<WindowManager> windowManager;
+	void shutdown();
 };

@@ -24,7 +24,7 @@ public:
 
 	// --- State Management ---
 	virtual void setViewport(int width, int height) = 0; // For window resizing.
-	virtual void setClearColour(const glm::vec4& color) = 0;
+	virtual void setClearColour(const glm::vec4 color) = 0;
 
 	// --- Debugging ---
 	virtual void enableWireframe(bool enabled) = 0;

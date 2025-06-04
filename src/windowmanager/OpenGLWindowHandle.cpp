@@ -4,17 +4,18 @@ OpenGLWindowHandle::OpenGLWindowHandle(int width, int height, const std::string&
 	// This creates the window proper;
 	m_Window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
 
+	// Checks whether window creation was successful
 	if(!m_Window){
 		glfwTerminate();
 		throw std::runtime_error("Failed to create GLFW window");
 	}
 
-	// Set this instance as the user pointer for the window, needed for the window size callback.
+	// Sets this instance as the user pointer for the window, needed for the window size callback.
 	glfwSetWindowUserPointer(m_Window, this);
 
-	// Set a size callback to keep the dimensions updated
+	// Sets a size callback to keep the dimensions updated
 	glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int newWidth, int newHeight) {
-		auto* handle = static_cast<OpenGLWindowHandle*>(glfwGetWindowUserPointer(window));
+		OpenGLWindowHandle* handle = static_cast<OpenGLWindowHandle*>(glfwGetWindowUserPointer(window));
 		if (handle) {
 			handle->m_Width = newWidth;
 			handle->m_Height = newHeight;
