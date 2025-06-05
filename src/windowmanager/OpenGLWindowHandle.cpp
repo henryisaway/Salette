@@ -20,34 +20,41 @@ OpenGLWindowHandle::OpenGLWindowHandle(int width, int height, const std::string&
 			handle->m_Width = newWidth;
 			handle->m_Height = newHeight;
 
-			CLIO_INFO("Window resizing was triggered.\nNew width: ", handle->m_Width, "\nNew Height: ", handle->m_Height);
+			CLIO_TRACE("Window resizing was triggered. New size is ", handle->m_Width, "x", handle->m_Height);
 		}
 	});
 
-	CLIO_INFO("Window (", m_id,") has been initialised.");
+	CLIO_INFO("Window (", m_id,") has been initialised with size ", m_Width, "x", m_Height);
 }
 
 OpenGLWindowHandle::~OpenGLWindowHandle() {
 	glfwDestroyWindow(m_Window);
+	CLIO_INFO("Window (", m_id, ") has been destroyed.");
 }
 
 void* OpenGLWindowHandle::getNativeHandle() const {
-	return reinterpret_cast<void*>(m_Window); // Returns raw pointer to the window
+	auto nativeHandle = reinterpret_cast<void*>(m_Window);
+	CLIO_TRACE("Window (", m_id, ") called getNativeHandle() with return ", nativeHandle);
+	return nativeHandle; // Returns raw pointer to the window
 }
 
 const std::string& OpenGLWindowHandle::getTitle() const {
+	CLIO_TRACE("Window (", m_id, ") called getTitle() with return ",  m_Title);
 	return m_Title;
 }
 
 const unsigned int OpenGLWindowHandle::getID() const {
+	CLIO_TRACE("Window (", m_id, ") called getID().");
 	return m_id;
 }
 
 int OpenGLWindowHandle::getWidth() const {
+	CLIO_TRACE("Window (", m_id, ") called getWidth() with return ", m_Width);
 	return m_Width;
 }
 
 int OpenGLWindowHandle::getHeight() const {
+	CLIO_TRACE("Window (", m_id, ") called getHeight() with return ", m_Height);
 	return m_Height;
 }
 
@@ -56,5 +63,6 @@ bool OpenGLWindowHandle::shouldClose() const {
 }
 
 void OpenGLWindowHandle::setClearColour(float r, float g, float b, float a) {
+	CLIO_DEBUG("Window (", m_id, ") clear colour set to (", r, "f, ", g, "f, ", b, "f, ", a, "f)");
 	glClearColor(r, g, b, a);
 }

@@ -16,6 +16,9 @@ namespace Clio {
     the output displays the message a different colour.
     */
     enum class Severity {
+        UNSET = -1,
+        TRACE,
+        DEBUG,
         INFO,
         WARN,
         ERROR,
@@ -29,11 +32,16 @@ namespace Clio {
     class Logger {
     private:
         std::mutex mtx;
+        Severity m_severityThreshold;
 
-        Logger() = default;
+        Logger(){
+            m_severityThreshold = Severity::UNSET;
+        }
 
         inline const char* severityToString(Severity severity) const {
             switch(severity) {
+            case Severity::TRACE: return "TRACE";
+            case Severity::DEBUG: return "DEBUG";
             case Severity::INFO: return "INFO";
             case Severity::WARN: return "WARN";
             case Severity::ERROR: return "ERROR";
@@ -56,29 +64,46 @@ namespace Clio {
             return oss.str();
         } 
 
+        inline const bool shouldLog(Severity severity) const {
+            return static_cast<int>(severity) >= static_cast<int>(m_severityThreshold);
+        }
+
     public:
         static Logger& get() {
             static Logger instance;
             return instance;
         }
 
+        inline void setSeverityThreshold(Severity severity){
+            m_severityThreshold = severity;
+        }
+
         // Template needed to handle different string types
         template<typename... Args>
         inline void log(Severity severity, const char* file, const int line, const Args&... args) {
-            std::lock_guard<std::mutex> lock(mtx);      // Basic thread-safety
+            if(m_severityThreshold == Severity::UNSET){
+                throw std::logic_error("Log severity threshold was not set. Run Clio::Logger.get().setSeverity( Clio::Severity::<Severity> ) to configure the logger before usage.");
+                return;
+            }
 
-            std::ostringstream oss;
-            (oss << ... << args);
+            if(shouldLog(severity)){
+                std::lock_guard<std::mutex> lock(mtx);      // Basic thread-safety
 
-            std::cout << "[" << getCurrentTimestamp() << "] "
-                << "[" << severityToString(severity) << "] "
-                << "[" << file << ":" << line << "] "
-                << oss.str() << "\n";
+                std::ostringstream oss;
+                (oss << ... << args);
+
+                std::cout << "[" << getCurrentTimestamp() << "] "
+                    << "[" << severityToString(severity) << "] "
+                    << "[" << file << ":" << line << "] "
+                    << oss.str() << "\n";
+            }
         }
     };
 }
 
 // --- Macro definitions ---
+#define CLIO_TRACE(...) Clio::Logger::get().log(Clio::Severity::TRACE, __FILE__, __LINE__, __VA_ARGS__)
+#define CLIO_DEBUG(...) Clio::Logger::get().log(Clio::Severity::DEBUG, __FILE__, __LINE__, __VA_ARGS__)
 #define CLIO_INFO(...) Clio::Logger::get().log(Clio::Severity::INFO, __FILE__, __LINE__, __VA_ARGS__)
 #define CLIO_WARN(...) Clio::Logger::get().log(Clio::Severity::WARN, __FILE__, __LINE__, __VA_ARGS__)
 #define CLIO_ERROR(...) Clio::Logger::get().log(Clio::Severity::ERROR, __FILE__, __LINE__, __VA_ARGS__)

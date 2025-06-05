@@ -22,8 +22,8 @@ Vista is a custom general-purpose 2D/3D graphics engine designed for flexibility
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/henryisaway/jynx.git
-   cd jynx
+   git clone https://github.com/henryisaway/vista.git
+   cd vista
    ```
 
 2. Create a build directory:

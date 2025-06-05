@@ -16,6 +16,7 @@
 #include "include/core/app.h"
 
 int main(){
+	Clio::Logger::get().setSeverityThreshold(Clio::Severity::DEBUG);
 	App::getInstance().run();
 	return 0;
 }
