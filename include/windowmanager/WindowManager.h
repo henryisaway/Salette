@@ -14,10 +14,14 @@ public:
 
 	static WindowManager& getInstance();
 
+
+
 private:
 	WindowManager();
 	WindowManager(const WindowManager&) = delete;				// Deleting copying operation
 	WindowManager operator=(const WindowManager&) = delete;		// Deleting assignment operation
 
 	std::vector<WindowHandle*> m_Windows; // List of all running windows
+
+	unsigned int windowID = 0;
 };

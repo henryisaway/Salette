@@ -1,7 +1,7 @@
 #include "../../include/windowmanager/WindowManager.h"
 
 WindowManager::WindowManager(){
-    std::cout << "Window Manager instance has been created\n";
+    CLIO_INFO("Window Manager instance has been created.");
 }
 
 WindowManager& WindowManager::getInstance(){
@@ -10,7 +10,7 @@ WindowManager& WindowManager::getInstance(){
 }
 
 WindowHandle* WindowManager::createWindow(int width, int height, const std::string& title){
-	WindowHandle* newWindow = new OpenGLWindowHandle(width, height, title);
+	WindowHandle* newWindow = new OpenGLWindowHandle(width, height, title, windowID++);
 
 	m_Windows.insert(m_Windows.end(), newWindow);
 
@@ -34,7 +34,7 @@ void WindowManager::closeWindow(WindowHandle* window) {
 
         delete window; //WindowHandle destructor will destroy the window upon deletion.
     } else {
-        std::cerr << "Attempted to close a window that does not exist.\n";
+        CLIO_WARN("Attempted to close a window that does not exist.");
     }
 }
 

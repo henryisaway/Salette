@@ -1,7 +1,7 @@
 #include "../../include/core/app.h"
 
 App::App(){
-	std::cout << "App instance has been created\n";
+	CLIO_INFO("App instance has been created");
 	makeSystems();
 	startup("Vista");
 }
@@ -54,7 +54,8 @@ void App::makeSystems(){
 void App::startup(const std::string& windowTitle){
 	// GLFW initialisation
 	if (!glfwInit()) {
-		std::runtime_error("Failed to initialize GLFW");
+		CLIO_FATAL("Failed to initialize GLFW. Shutting down.");
+		exit(1);
 	}
 
 	// Requires OpenGL 3.3 or higher
@@ -62,7 +63,7 @@ void App::startup(const std::string& windowTitle){
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	if(DEBUG_MODE) std::cout << "GLFW is ready\n";
+	CLIO_INFO("GLFW is ready");
 
 	// Creating main window;
 	auto window_ptr = WindowManager::getInstance().createWindow(800, 550, windowTitle);
@@ -70,15 +71,15 @@ void App::startup(const std::string& windowTitle){
 
 	// Setting up GLAD
 	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-		std::cerr << "Failed to initialise GLAD" << std::endl;
+		CLIO_FATAL("Failed to initialise GLAD. Shutting down.");
 		glfwTerminate();
-		exit(-1);
+		exit(1);
 	}
 
-	if(DEBUG_MODE) std::cout << "GLAD is ready\n";
+	CLIO_INFO("GLAD is ready");
 }
 
 void App::shutdown(){
 	glfwTerminate();
-	if(DEBUG_MODE) std::cout << "Program finished" << std::endl;
+	CLIO_INFO("Program Finished.");
 }
