@@ -1,7 +1,7 @@
 #pragma once
 #include "config.h"
 #include "../events/inputHandler.h"
-#include "../factory/factory.h"
+#include "../factory/PrimitiveModelFactory.h"
 #include "../renderer/OpenGLRenderContext.h"
 #include "../windowmanager/WindowManager.h"
 

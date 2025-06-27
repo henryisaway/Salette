@@ -33,7 +33,8 @@ add_executable(Vista
             src/shader/shaderLinker.cpp
             src/windowmanager/OpenGLWindowHandle.cpp
             src/windowmanager/WindowManager.cpp
-            src/factory/factory.cpp
+            src/factory/PrimitiveModelFactory.cpp
+            src/renderer/PrimitiveModel.cpp
             src/core/app.cpp
             )
 

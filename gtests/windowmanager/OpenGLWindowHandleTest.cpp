@@ -14,12 +14,12 @@ void OpenGLWindowHandleTest::TearDown(){
 
 TEST_F(OpenGLWindowHandleTest, ConstructorCreatesWindow) {
 	EXPECT_NO_THROW({
-		OpenGLWindowHandle window(800, 600, "Test Window");
+		OpenGLWindowHandle window(800, 600, "Test Window", 0);
 	});
 }
 
 TEST_F(OpenGLWindowHandleTest, GetNativeHandleReturnsValidPointer) {
-	OpenGLWindowHandle window(800, 600, "Test Window");
+	OpenGLWindowHandle window(800, 600, "Test Window", 0);
 	void* nativeHandle = window.getNativeHandle();
 
 	EXPECT_NE(nativeHandle, nullptr) << "Native handle should not be null.";
@@ -30,7 +30,7 @@ TEST_F(OpenGLWindowHandleTest, GettersReturnCorrectValues) {
 	int height = 600;
 	std::string title = "Test Window";
 
-	OpenGLWindowHandle window(width, height, title);
+	OpenGLWindowHandle window(width, height, title, 0);
 
 	EXPECT_EQ(window.getWidth(), width) << "Width should match the constructor value.";
 	EXPECT_EQ(window.getHeight(), height) << "Height should match the constructor value.";
@@ -38,12 +38,12 @@ TEST_F(OpenGLWindowHandleTest, GettersReturnCorrectValues) {
 }
 
 TEST_F(OpenGLWindowHandleTest, ShouldCloseReturnsFalseInitially) {
-	OpenGLWindowHandle window(800, 600, "Test Window");
+	OpenGLWindowHandle window(800, 600, "Test Window", 0);
 	EXPECT_FALSE(window.shouldClose()) << "Window should not report close immediately after creation.";
 }
 
 TEST_F(OpenGLWindowHandleTest, UpdateWindowSizeReflectsResizedWindow) {
-	OpenGLWindowHandle window(800, 600, "Test Window");
+	OpenGLWindowHandle window(800, 600, "Test Window", 0);
 
 	// Simulate a window resize
 	glfwSetWindowSize(static_cast<GLFWwindow*>(window.getNativeHandle()), 1024, 700);
@@ -60,7 +60,7 @@ TEST_F(OpenGLWindowHandleTest, DestructorDestroysWindow) {
 	GLFWwindow* rawWindow = nullptr;
 
 	{
-		OpenGLWindowHandle window(800, 600, "Test Window");
+		OpenGLWindowHandle window(800, 600, "Test Window", 0);
 		rawWindow = static_cast<GLFWwindow*>(window.getNativeHandle());
 		EXPECT_NE(rawWindow, nullptr) << "Raw GLFW window pointer should not be null.";
 

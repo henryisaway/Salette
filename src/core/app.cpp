@@ -24,18 +24,20 @@ void App::run(){
 	while(WindowManager::getInstance().isRunning()){
 		windows = WindowManager::getInstance().getWindows(); // This is needed to keep the list updated on opened/closed windows
 
-		for(WindowHandle* window : windows){
+		for (auto it = windows.begin(); it != windows.end();) {
+			WindowHandle* window = *it;
 			glfwMakeContextCurrent((GLFWwindow*)window->getNativeHandle()); // Focus on the current window
 
 			// Check if it should close
-			if(window->shouldClose()){
+			if (window->shouldClose()) {
+				it = windows.erase(it);
 				WindowManager::getInstance().closeWindow(window);
-				continue;
+			} else {
+				//Run any rendering calls directed at this window over here
+				glClear(GL_COLOR_BUFFER_BIT);
+				glfwSwapBuffers((GLFWwindow*)window->getNativeHandle());
+				++it;
 			}
-
-			//Run any rendering calls directed at this window over here
-			glClear(GL_COLOR_BUFFER_BIT);
-			glfwSwapBuffers((GLFWwindow*)window->getNativeHandle());
 		}
 
 		WindowManager::getInstance().pollEvents();
