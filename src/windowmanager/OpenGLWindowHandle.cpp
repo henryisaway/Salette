@@ -1,5 +1,7 @@
 #include "../../include/windowmanager/OpenGLWindowHandle.h"
 
+namespace Vista {
+
 OpenGLWindowHandle::OpenGLWindowHandle(int width, int height, const std::string& title, unsigned int id) : m_Width(width), m_Height(height), m_Title(title), m_id(id) {
 	// This creates the window proper;
 	m_Window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
@@ -25,6 +27,33 @@ OpenGLWindowHandle::OpenGLWindowHandle(int width, int height, const std::string&
 	});
 
 	CLIO_INFO("Window (", m_id,") has been initialised with size ", m_Width, "x", m_Height);
+}
+
+OpenGLWindowHandle::OpenGLWindowHandle(GLFWwindow* window) : m_Window(window) {
+    if (!m_Window) {
+        CLIO_FATAL("Attempted to create OpenGLWindowHandle with a null GLFWwindow*.");
+        exit(1);
+    }
+
+    glfwMakeContextCurrent(m_Window);
+
+    int width, height;
+    glfwGetWindowSize(m_Window, &width, &height);
+    m_Width = width;
+    m_Height = height;
+
+    const char* title = glfwGetWindowTitle(m_Window);
+    if (title) {
+        m_Title = title;
+    } else {
+        m_Title = ""; // Default empty title
+    }
+    // Assign a dummy ID for test purposes, or query if GLFW provides one
+    m_id = 0; // Or some other unique identifier if available
+
+    glfwSetWindowUserPointer(m_Window, this);
+
+    CLIO_INFO("Window (", m_id, ") has been initialised from existing GLFWwindow* with size ", m_Width, "x", m_Height);
 }
 
 OpenGLWindowHandle::~OpenGLWindowHandle() {
@@ -66,3 +95,5 @@ void OpenGLWindowHandle::setClearColour(const glm::vec4& colour) {
 	CLIO_DEBUG("Window (", m_id, ") clear colour set to (", colour.r, "f, ", colour.g, "f, ", colour.b, "f, ", colour.a, "f)");
 	glClearColor(colour.r, colour.g, colour.b, colour.a);
 }
+
+} // namespace Vista

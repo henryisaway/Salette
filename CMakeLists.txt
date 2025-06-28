@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.15)
 project(Vista)
 cmake_policy(SET CMP0072 NEW)
 
@@ -6,61 +6,76 @@ cmake_policy(SET CMP0072 NEW)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-find_Package(OpenGL REQUIRED)
+# Include OpenGL
+find_package(OpenGL REQUIRED)
 
-# Include GLFW
+# GLFW
 set(GLFW_ROOT "${CMAKE_SOURCE_DIR}/dependencies/glfw")
-include_directories(${GLFW_ROOT}/include)
+add_subdirectory(${GLFW_ROOT})
 
-# Link GLFW
-link_directories(${GLFW_ROOT}/lib)
-
-#include GLAD
+# GLAD
 set(GLAD_ROOT "${CMAKE_SOURCE_DIR}/dependencies/glad")
 include_directories(${GLAD_ROOT}/include)
 
-#include GLM
+# GLM
 set(GLM_ROOT "${CMAKE_SOURCE_DIR}/dependencies/glm")
 include_directories(${GLM_ROOT}/include)
 
-#include Clio
+# Clio
 set(CLIO_ROOT "${CMAKE_SOURCE_DIR}/dependencies/clio")
 include_directories(${CLIO_ROOT})
 
-#include Includes
+# Includes
 set(INCLUDES_ROOT "${CMAKE_SOURCE_DIR}/include/core")
 include_directories(${INCLUDES_ROOT})
 
+# Platform-specific dependencies (mainly for static GLFW)
+if(UNIX AND NOT APPLE)
+    set(PLATFORM_LIBS dl pthread X11)
+elseif(WIN32)
+    set(PLATFORM_LIBS)
+elseif(APPLE)
+    find_library(COCOA_LIBRARY Cocoa REQUIRED)
+    find_library(IOKIT_LIBRARY IOKit REQUIRED)
+    find_library(COREVIDEO_LIBRARY CoreVideo REQUIRED)
+    set(PLATFORM_LIBS ${COCOA_LIBRARY} ${IOKIT_LIBRARY} ${COREVIDEO_LIBRARY})
+endif()
+
 # Add executable
 add_executable(Vista
-            src/core/includes.cpp
-            main.cpp
-            dependencies/glad/src/glad.c
-            src/events/inputHandler.cpp
-            src/shader/OpenGLShader.cpp
-            src/shader/OpenGLShaderLinker.cpp
-            src/windowmanager/OpenGLWindowHandle.cpp
-            src/windowmanager/WindowManager.cpp
-            src/factory/PrimitiveModelFactory.cpp
-            src/renderer/PrimitiveModel.cpp
-            src/renderer/OpenGLRenderer.cpp
-            src/core/app.cpp
-            )
+    src/core/includes.cpp
+    main.cpp
+    ${GLAD_ROOT}/src/glad.c
+    src/events/inputHandler.cpp
+    src/shader/OpenGLShader.cpp
+    src/shader/OpenGLShaderLinker.cpp
+    src/windowmanager/OpenGLWindowHandle.cpp
+    src/windowmanager/WindowManager.cpp
+    src/factory/PrimitiveModelFactory.cpp
+    src/renderer/PrimitiveModel.cpp
+    src/renderer/OpenGLRenderer.cpp
+    src/core/app.cpp
+)
 
-# Link libraries
-target_link_libraries(Vista glfw OpenGL::GL)
+target_link_libraries(Vista
+    PRIVATE glfw OpenGL::GL ${PLATFORM_LIBS}
+)
 
 # --- Google Tests ---
 enable_testing()
 
 add_executable(Tests 
-            src/core/includes.cpp
-            gtests/gtestmain.cpp
-            dependencies/glad/src/glad.c
-            src/windowmanager/OpenGLWindowHandle.cpp
-            src/windowmanager/WindowManager.cpp
-            gtests/windowmanager/WindowManagerTest.cpp
-            gtests/windowmanager/OpenGLWindowHandleTest.cpp
-            )
-target_link_libraries(Tests gtest gtest_main pthread glfw OpenGL::GL)
+    src/core/includes.cpp
+    gtests/gtestmain.cpp
+    ${GLAD_ROOT}/src/glad.c
+    src/windowmanager/OpenGLWindowHandle.cpp
+    src/windowmanager/WindowManager.cpp
+    gtests/windowmanager/WindowManagerTest.cpp
+    gtests/windowmanager/OpenGLWindowHandleTest.cpp
+)
+
+target_link_libraries(Tests
+    PRIVATE gtest gtest_main pthread glfw OpenGL::GL ${PLATFORM_LIBS}
+)
+
 add_test(NAME Tests COMMAND Tests)

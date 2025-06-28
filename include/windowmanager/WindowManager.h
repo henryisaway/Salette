@@ -3,6 +3,8 @@
 #include "WindowHandle.h"
 #include "OpenGLWindowHandle.h"
 
+namespace Vista {
+
 class WindowManager {
 public:
 	// --- Basic Windowing functionality ---
@@ -25,3 +27,5 @@ private:
 
 	unsigned int windowID = 0;
 };
+
+}

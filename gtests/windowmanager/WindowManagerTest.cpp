@@ -11,8 +11,8 @@ void WindowManagerTest::TearDown(){
 }
 
 TEST_F(WindowManagerTest, CreateWindowReturnsNonNull){
-	WindowManager& windowmanager = WindowManager::getInstance();
-	WindowHandle* newWindow = windowmanager.createWindow(800, 600, "Test Window");
+	Vista::WindowManager& windowmanager = Vista::WindowManager::getInstance();
+	Vista::WindowHandle* newWindow = windowmanager.createWindow(800, 600, "Test Window");
 	EXPECT_NE(newWindow, nullptr) << "Window handle should not be null.";
 	windowmanager.closeWindow(newWindow);
 }

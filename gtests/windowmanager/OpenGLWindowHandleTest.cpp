@@ -1,4 +1,5 @@
 #include "OpenGLWindowHandleTest.h"
+namespace Vista {
 
 void OpenGLWindowHandleTest::SetUp(){
 	// Ensure GLFW is properly initialized before any test
@@ -70,4 +71,6 @@ TEST_F(OpenGLWindowHandleTest, DestructorDestroysWindow) {
 
 	// After the OpenGLWindowHandle goes out of scope, the window should be destroyed
 	// EXPECT_TRUE(glfwWindowShouldClose(rawWindow)) << "Window should be marked for close after destruction.";
+}
+
 }

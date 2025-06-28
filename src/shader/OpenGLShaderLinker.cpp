@@ -29,7 +29,7 @@ unsigned int OpenGLShaderLinker::linkProgram(const std::string &vertexFilepath, 
     if(!shaderLinkSuccessful){
         char errorLog[1024];
         glGetProgramInfoLog(shader, 1024, NULL, errorLog);
-        CLIO_FATAL("Shader linking error:\n", errorLog);
+        CLIO_FATAL("Shader linking error: ", errorLog);
         exit(EXIT_FAILURE);
     }
     
@@ -70,6 +70,7 @@ unsigned int OpenGLShaderLinker::compileShaderModule(const std::string &filepath
         char errorLog[1024];
         glGetShaderInfoLog(shaderModule, 1024, NULL, errorLog);
         CLIO_FATAL("Shader Module compilation error:\n", errorLog);
+        exit(EXIT_FAILURE);
     }
     
     return shaderModule;

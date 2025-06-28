@@ -1,6 +1,8 @@
 #pragma once
 #include <includes.h>
 
+namespace Vista {
+
 class WindowHandle{
 public:
 	virtual ~WindowHandle() = default;
@@ -16,3 +18,5 @@ public:
 	// --- Window setters ---
 	virtual void setClearColour(const glm::vec4& colour) = 0;
 };
+
+}

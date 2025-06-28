@@ -2,10 +2,13 @@
 #include <includes.h>
 #include "WindowHandle.h"
 
+namespace Vista {
+
 class OpenGLWindowHandle : public WindowHandle{
 public:
 
 	OpenGLWindowHandle(int width, int height, const std::string& title, unsigned int id);
+	OpenGLWindowHandle(GLFWwindow* window); // New constructor for existing GLFWwindow*
 	~OpenGLWindowHandle();
 
 	// --- Window Information ---
@@ -25,3 +28,5 @@ private:
 	int m_Width;
 	int m_Height;
 };
+
+}

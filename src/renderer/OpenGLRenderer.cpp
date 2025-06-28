@@ -32,8 +32,11 @@ void OpenGLRenderer::loadGLFW() {
 		CLIO_FATAL("Failed to initialise GLFW.");
 		exit(-1);
 	}
+
+    glfwDefaultWindowHints();
+    
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 }
 
