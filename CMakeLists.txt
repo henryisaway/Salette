@@ -35,6 +35,7 @@ add_executable(Vista
             src/windowmanager/WindowManager.cpp
             src/factory/PrimitiveModelFactory.cpp
             src/renderer/PrimitiveModel.cpp
+            src/renderer/OpenGLRenderer.cpp
             src/core/app.cpp
             )
 

@@ -14,5 +14,5 @@ public:
 	virtual bool shouldClose() const = 0;
 
 	// --- Window setters ---
-	virtual void setClearColour(float r, float g, float b, float a) = 0;
+	virtual void setClearColour(const glm::vec4& colour) = 0;
 };

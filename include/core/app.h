@@ -2,7 +2,7 @@
 #include "config.h"
 #include "../events/inputHandler.h"
 #include "../factory/PrimitiveModelFactory.h"
-#include "../renderer/OpenGLRenderContext.h"
+#include "../renderer/InterfaceRenderer.h"
 #include "../windowmanager/WindowManager.h"
 
 class App{
@@ -20,4 +20,7 @@ private:
 	void makeSystems();
 	void startup(const std::string& windowTitle);
 	void shutdown();
+
+	// --- Systems ---
+	std::unique_ptr<IRenderer> m_renderer;
 };

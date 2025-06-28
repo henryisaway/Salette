@@ -62,7 +62,7 @@ bool OpenGLWindowHandle::shouldClose() const {
 	return glfwWindowShouldClose(m_Window);
 }
 
-void OpenGLWindowHandle::setClearColour(float r, float g, float b, float a) {
-	CLIO_DEBUG("Window (", m_id, ") clear colour set to (", r, "f, ", g, "f, ", b, "f, ", a, "f)");
-	glClearColor(r, g, b, a);
+void OpenGLWindowHandle::setClearColour(const glm::vec4& colour) {
+	CLIO_DEBUG("Window (", m_id, ") clear colour set to (", colour.r, "f, ", colour.g, "f, ", colour.b, "f, ", colour.a, "f)");
+	glClearColor(colour.r, colour.g, colour.b, colour.a);
 }

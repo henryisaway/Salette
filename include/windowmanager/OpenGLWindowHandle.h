@@ -15,7 +15,7 @@ public:
 	int getWidth() const override;
 	int getHeight() const override;
 	bool shouldClose() const override;
-	void setClearColour(float r, float g, float b, float a) override;
+	void setClearColour(const glm::vec4& colour) override;
 
 private:
 

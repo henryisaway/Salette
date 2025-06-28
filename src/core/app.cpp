@@ -1,42 +1,44 @@
 #include "../../include/core/app.h"
+#include "../../include/renderer/OpenGLRenderer.h" // For make_unique
 
-App::App(){
+App::App() {
 	CLIO_INFO("App instance has been created");
 	makeSystems();
 	startup("Vista");
 }
 
-App& App::getInstance(){
+App& App::getInstance() {
 	static App instance;
 	return instance;
 }
 
 void App::run(){
-	std::vector<WindowHandle*>& windows = WindowManager::getInstance().getWindows();
+    // --- One-time setup for all windows ---
+    for(WindowHandle* window : WindowManager::getInstance().getWindows()){
+        m_renderer->bindTarget(window);
+        m_renderer->setClearColour({0.4f, 0.4f, 0.4f, 1.0f});
+    }
+    m_renderer->bindTarget(nullptr); // Unbind after setup
 
-	// Loop through each open window
-	// Run any general renderer settings here
-	for(WindowHandle* window : windows){
-		glfwMakeContextCurrent((GLFWwindow*)window->getNativeHandle());
-		window->setClearColour(0.4f, 0.4f, 0.4f, 1.0f); // In this case, this just sets the clear colour for every window
-	}
+	while(WindowManager::getInstance().isRunning()) {
+		// Use a copy of the window list to avoid iterator invalidation issues
+        auto windows = WindowManager::getInstance().getWindows();
 
-	while(WindowManager::getInstance().isRunning()){
-		windows = WindowManager::getInstance().getWindows(); // This is needed to keep the list updated on opened/closed windows
+		for (WindowHandle* window : windows) {
 
-		for (auto it = windows.begin(); it != windows.end();) {
-			WindowHandle* window = *it;
-			glfwMakeContextCurrent((GLFWwindow*)window->getNativeHandle()); // Focus on the current window
-
-			// Check if it should close
 			if (window->shouldClose()) {
-				it = windows.erase(it);
+                // Unbind the context before closing the window
+                m_renderer->bindTarget(nullptr);
+                // Let the WindowManager handle the entire closing process
 				WindowManager::getInstance().closeWindow(window);
 			} else {
-				//Run any rendering calls directed at this window over here
-				glClear(GL_COLOR_BUFFER_BIT);
-				glfwSwapBuffers((GLFWwindow*)window->getNativeHandle());
-				++it;
+                // Tell the renderer which window to draw to
+                m_renderer->bindTarget(window);
+
+                // Render the frame
+				m_renderer->beginFrame();
+				// --- All drawing commands for this window will go here ---
+				m_renderer->endFrame();
 			}
 		}
 
@@ -46,42 +48,17 @@ void App::run(){
 	shutdown();
 }
 
-void App::makeSystems(){
-	//renderer = std::make_unique<OpenGL>();
-	//keyboardHandler = std::make_unique<KeyboardHandler>(m_window);
-	//windowManager = std::make_unique<WindowManager>();
+void App::makeSystems() {
+	m_renderer = std::make_unique<OpenGLRenderer>();
 }
 
 
-void App::startup(const std::string& windowTitle){
-	// GLFW initialisation
-	if (!glfwInit()) {
-		CLIO_FATAL("Failed to initialize GLFW. Shutting down.");
-		exit(1);
-	}
-
-	// Requires OpenGL 3.3 or higher
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-	CLIO_INFO("GLFW is ready");
-
-	// Creating main window;
-	auto window_ptr = WindowManager::getInstance().createWindow(800, 550, windowTitle);
-	glfwMakeContextCurrent((GLFWwindow*)window_ptr->getNativeHandle());
-
-	// Setting up GLAD
-	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-		CLIO_FATAL("Failed to initialise GLAD. Shutting down.");
-		glfwTerminate();
-		exit(1);
-	}
-
-	CLIO_INFO("GLAD is ready");
+void App::startup(const std::string& windowTitle) {
+    m_renderer->initialise();
+	WindowManager::getInstance().createWindow(800, 550, windowTitle);
 }
 
-void App::shutdown(){
-	glfwTerminate();
+void App::shutdown() {
+    m_renderer->shutdown();
 	CLIO_INFO("Program Finished.");
 }
