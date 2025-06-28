@@ -10,14 +10,15 @@ WindowManager& WindowManager::getInstance(){
 }
 
 WindowHandle* WindowManager::createWindow(int width, int height, const std::string& title){
-	WindowHandle* newWindow = new OpenGLWindowHandle(width, height, title, windowID++);
+	auto newWindow = std::make_unique<OpenGLWindowHandle>(width, height, title, windowID++);
+    WindowHandle* newWindowPtr = newWindow.get();
 
-	m_Windows.insert(m_Windows.end(), newWindow);
+	m_Windows.push_back(std::move(newWindow));
 
-	return newWindow;
+	return newWindowPtr;
 }
 
-std::vector<WindowHandle*>& WindowManager::getWindows(){
+const std::vector<std::unique_ptr<WindowHandle>>& WindowManager::getWindows() const {
     return m_Windows;
 }
 
@@ -26,13 +27,11 @@ void WindowManager::pollEvents(){
 }
 
 void WindowManager::closeWindow(WindowHandle* window) {
-    // Checks if the window exists in the vector
-    auto it = std::find(m_Windows.begin(), m_Windows.end(), window);
-    if (it != m_Windows.end()) {
-        // Remove the window from the vector
-        m_Windows.erase(it);
+    auto it = std::find_if(m_Windows.begin(), m_Windows.end(),
+        [&](const std::unique_ptr<WindowHandle>& p) { return p.get() == window; });
 
-        delete window; //WindowHandle destructor will destroy the window upon deletion.
+    if (it != m_Windows.end()) {
+        m_Windows.erase(it);
     } else {
         CLIO_WARN("Attempted to close a window that does not exist.");
     }

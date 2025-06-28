@@ -14,5 +14,5 @@ TEST_F(WindowManagerTest, CreateWindowReturnsNonNull){
 	WindowManager& windowmanager = WindowManager::getInstance();
 	WindowHandle* newWindow = windowmanager.createWindow(800, 600, "Test Window");
 	EXPECT_NE(newWindow, nullptr) << "Window handle should not be null.";
-	delete newWindow;
+	windowmanager.closeWindow(newWindow);
 }

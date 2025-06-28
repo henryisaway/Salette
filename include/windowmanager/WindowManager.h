@@ -7,7 +7,7 @@ class WindowManager {
 public:
 	// --- Basic Windowing functionality ---
 	WindowHandle* createWindow(int width, int height, const std::string& title);
-	std::vector<WindowHandle*>& getWindows();
+	const std::vector<std::unique_ptr<WindowHandle>>& getWindows() const;
 	void pollEvents();
 	void closeWindow(WindowHandle* window);
 	bool isRunning();
@@ -21,7 +21,7 @@ private:
 	WindowManager(const WindowManager&) = delete;				// Deleting copying operation
 	WindowManager operator=(const WindowManager&) = delete;		// Deleting assignment operation
 
-	std::vector<WindowHandle*> m_Windows; // List of all running windows
+	std::vector<std::unique_ptr<WindowHandle>> m_Windows; // List of all running windows
 
 	unsigned int windowID = 0;
 };

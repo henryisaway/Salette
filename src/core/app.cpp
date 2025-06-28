@@ -14,26 +14,24 @@ App& App::getInstance() {
 
 void App::run(){
     // --- One-time setup for all windows ---
-    for(WindowHandle* window : WindowManager::getInstance().getWindows()){
-        m_renderer->bindTarget(window);
+    for(const auto& window : WindowManager::getInstance().getWindows()){
+        m_renderer->bindTarget(window.get());
         m_renderer->setClearColour({0.4f, 0.4f, 0.4f, 1.0f});
     }
     m_renderer->bindTarget(nullptr); // Unbind after setup
 
 	while(WindowManager::getInstance().isRunning()) {
-		// Use a copy of the window list to avoid iterator invalidation issues
-        auto windows = WindowManager::getInstance().getWindows();
 
-		for (WindowHandle* window : windows) {
+		for (const auto& window : WindowManager::getInstance().getWindows()) {
 
 			if (window->shouldClose()) {
                 // Unbind the context before closing the window
                 m_renderer->bindTarget(nullptr);
                 // Let the WindowManager handle the entire closing process
-				WindowManager::getInstance().closeWindow(window);
+				WindowManager::getInstance().closeWindow(window.get());
 			} else {
                 // Tell the renderer which window to draw to
-                m_renderer->bindTarget(window);
+                m_renderer->bindTarget(window.get());
 
                 // Render the frame
 				m_renderer->beginFrame();
