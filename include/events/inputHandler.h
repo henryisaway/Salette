@@ -1,4 +1,4 @@
-#include "../core/config.h"
+#include <includes.h>
 
 class KeyboardHandler{
 public:

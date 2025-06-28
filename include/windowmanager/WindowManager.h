@@ -1,5 +1,5 @@
 #pragma once
-#include "../core/config.h"
+#include <includes.h>
 #include "WindowHandle.h"
 #include "OpenGLWindowHandle.h"
 

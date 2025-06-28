@@ -12,11 +12,11 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-#include "include/core/config.h"
+#include <includes.h>
 #include "include/core/app.h"
 
 int main(){
 	Clio::Logger::get().setSeverityThreshold(Clio::Severity::DEBUG);
-	App::getInstance().run();
+	Vista::App::getInstance().run();
 	return 0;
 }

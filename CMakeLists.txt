@@ -23,14 +23,22 @@ include_directories(${GLAD_ROOT}/include)
 set(GLM_ROOT "${CMAKE_SOURCE_DIR}/dependencies/glm")
 include_directories(${GLM_ROOT}/include)
 
+#include Clio
+set(CLIO_ROOT "${CMAKE_SOURCE_DIR}/dependencies/clio")
+include_directories(${CLIO_ROOT})
+
+#include Includes
+set(INCLUDES_ROOT "${CMAKE_SOURCE_DIR}/include/core")
+include_directories(${INCLUDES_ROOT})
+
 # Add executable
 add_executable(Vista
-            include/core/config.h
-            src/core/config.cpp
+            src/core/includes.cpp
             main.cpp
             dependencies/glad/src/glad.c
             src/events/inputHandler.cpp
-            src/shader/shaderLinker.cpp
+            src/shader/OpenGLShader.cpp
+            src/shader/OpenGLShaderLinker.cpp
             src/windowmanager/OpenGLWindowHandle.cpp
             src/windowmanager/WindowManager.cpp
             src/factory/PrimitiveModelFactory.cpp
@@ -46,8 +54,7 @@ target_link_libraries(Vista glfw OpenGL::GL)
 enable_testing()
 
 add_executable(Tests 
-            include/core/config.h
-            src/core/config.cpp
+            src/core/includes.cpp
             gtests/gtestmain.cpp
             dependencies/glad/src/glad.c
             src/windowmanager/OpenGLWindowHandle.cpp

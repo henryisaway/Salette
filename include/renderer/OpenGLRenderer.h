@@ -1,8 +1,10 @@
 #pragma once
-#include "../core/config.h"
+#include <includes.h>
 #include "IRenderer.h"
 
 // Refer to InterfaceRenderer.h for an explanation of each method.
+
+namespace Vista {
 
 class OpenGLRenderer : public IRenderer {
 public:
@@ -49,3 +51,5 @@ private:
 
 	WindowHandle* m_bound_target = nullptr;
 };
+
+}

@@ -1,5 +1,7 @@
 #include "../../include/renderer/OpenGLRenderer.h"
 
+
+namespace Vista {
 // --- Basic Management ---
 
 void OpenGLRenderer::initialise() {
@@ -81,4 +83,6 @@ void OpenGLRenderer::framebufferSizeCallback(GLFWwindow* window, int width, int 
 
 void OpenGLRenderer::onFramebufferSizeChange(int width, int height) {
 	glViewport(0, 0, width, height);
+}
+
 }

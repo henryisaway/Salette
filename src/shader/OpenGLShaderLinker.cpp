@@ -1,12 +1,18 @@
-#include "../../include/shader/shaderLinker.h"
+#include "../../include/shader/OpenGLShaderLinker.h"
+
+namespace Vista {
+
+std::unique_ptr<IShader> OpenGLShaderLinker::createShader(const std::string& vertexPath, const std::string& fragmentPath){
+    return std::make_unique<OpenGLShader>(linkProgram(vertexPath, fragmentPath));
+}
 
 // This links all compiled shader modules together
-unsigned int linkShader(const std::string &vertexFilepath, const std::string &fragmentFilepath){
+unsigned int OpenGLShaderLinker::linkProgram(const std::string &vertexFilepath, const std::string &fragmentFilepath){
     
     // Packs vertex and fragment shaders together in a vector
     std::vector<unsigned int> modules;
-    modules.push_back(compileModule(vertexFilepath, GL_VERTEX_SHADER));
-    modules.push_back(compileModule(fragmentFilepath, GL_FRAGMENT_SHADER));
+    modules.push_back(compileShaderModule(vertexFilepath, GL_VERTEX_SHADER));
+    modules.push_back(compileShaderModule(fragmentFilepath, GL_FRAGMENT_SHADER));
     
     
     unsigned int shader = glCreateProgram(); // Returns ID for the shader program
@@ -23,7 +29,8 @@ unsigned int linkShader(const std::string &vertexFilepath, const std::string &fr
     if(!shaderLinkSuccessful){
         char errorLog[1024];
         glGetProgramInfoLog(shader, 1024, NULL, errorLog);
-        std::cerr << "Shader linking error:\n" << errorLog << std::endl;
+        CLIO_FATAL("Shader linking error:\n", errorLog);
+        exit(EXIT_FAILURE);
     }
     
     // Shaders aren't needed after linking, so they are all deleted
@@ -35,7 +42,7 @@ unsigned int linkShader(const std::string &vertexFilepath, const std::string &fr
 }
 
 // This loads the shader module
-unsigned int compileModule(const std::string &filepath, unsigned int moduleType){
+unsigned int OpenGLShaderLinker::compileShaderModule(const std::string &filepath, unsigned int moduleType){
     std::ifstream file; // file object
     std::stringstream bufferedLines; // object that stores multiple strings
     std::string line;
@@ -62,8 +69,10 @@ unsigned int compileModule(const std::string &filepath, unsigned int moduleType)
     if(!shaderCompilationSuccessful){
         char errorLog[1024];
         glGetShaderInfoLog(shaderModule, 1024, NULL, errorLog);
-        std::cerr << "Shader Module compilation error:\n" << errorLog << std::endl;
+        CLIO_FATAL("Shader Module compilation error:\n", errorLog);
     }
     
     return shaderModule;
+}
+
 }

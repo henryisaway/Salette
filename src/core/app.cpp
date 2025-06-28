@@ -1,22 +1,22 @@
 #include "../../include/core/app.h"
 #include "../../include/renderer/OpenGLRenderer.h" // For make_unique
 
-App::App() {
+Vista::App::App() {
 	CLIO_INFO("App instance has been created");
 	makeSystems();
 	startup("Vista");
 }
 
-App& App::getInstance() {
+Vista::App& Vista::App::getInstance() {
 	static App instance;
 	return instance;
 }
 
-void App::run(){
+void Vista::App::run(){
     // --- One-time setup for all windows ---
     for(const auto& window : WindowManager::getInstance().getWindows()){
         m_renderer->bindTarget(window.get());
-        m_renderer->setClearColour({0.4f, 0.4f, 0.4f, 1.0f});
+        m_renderer->setClearColour({0.3f, 0.3f, 0.3f, 1.0f});
     }
     m_renderer->bindTarget(nullptr); // Unbind after setup
 
@@ -46,17 +46,17 @@ void App::run(){
 	shutdown();
 }
 
-void App::makeSystems() {
+void Vista::App::makeSystems() {
 	m_renderer = std::make_unique<OpenGLRenderer>();
 }
 
 
-void App::startup(const std::string& windowTitle) {
+void Vista::App::startup(const std::string& windowTitle) {
     m_renderer->initialise();
 	WindowManager::getInstance().createWindow(800, 550, windowTitle);
 }
 
-void App::shutdown() {
+void Vista::App::shutdown() {
     m_renderer->shutdown();
 	CLIO_INFO("Program Finished.");
 }

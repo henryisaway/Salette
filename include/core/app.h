@@ -1,9 +1,11 @@
 #pragma once
-#include "config.h"
+#include <includes.h>
 #include "../events/inputHandler.h"
 #include "../factory/PrimitiveModelFactory.h"
 #include "../renderer/IRenderer.h"
 #include "../windowmanager/WindowManager.h"
+
+namespace Vista {
 
 class App{
 public:
@@ -24,3 +26,5 @@ private:
 	// --- Systems ---
 	std::unique_ptr<IRenderer> m_renderer;
 };
+
+}

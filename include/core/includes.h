@@ -9,8 +9,6 @@
 #include <string>
 #include <sstream>
 #include <algorithm>
-
-#include "../../dependencies/glm/include/glm/glm.hpp"
-#include "../../dependencies/clio/clio.hpp"
-
-#define DEBUG_MODE 1
+#include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <clio.hpp>

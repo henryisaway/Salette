@@ -1,5 +1,5 @@
 #pragma once
-#include "../core/config.h"
+#include <includes.h>
 
 class WindowHandle{
 public:
