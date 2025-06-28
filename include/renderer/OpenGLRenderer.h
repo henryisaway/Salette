@@ -1,6 +1,6 @@
 #pragma once
 #include "../core/config.h"
-#include "InterfaceRenderer.h"
+#include "IRenderer.h"
 
 // Refer to InterfaceRenderer.h for an explanation of each method.
 

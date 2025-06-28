@@ -2,7 +2,7 @@
 #include "config.h"
 #include "../events/inputHandler.h"
 #include "../factory/PrimitiveModelFactory.h"
-#include "../renderer/InterfaceRenderer.h"
+#include "../renderer/IRenderer.h"
 #include "../windowmanager/WindowManager.h"
 
 class App{
