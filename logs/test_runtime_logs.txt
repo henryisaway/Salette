@@ -1,4 +1,0 @@
-[==========] Running 16 tests from 5 test suites.
-[----------] Global test environment set-up.
-[----------] 1 test from OpenGLShaderLinkerTest
-[ RUN      ] OpenGLShaderLinkerTest.CreateShader_ValidFiles_ReturnsValidShader
