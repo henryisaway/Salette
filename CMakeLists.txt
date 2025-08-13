@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(Jynx)
+project(Salette)
 cmake_policy(SET CMP0072 NEW)
 
 # Set C++ standard
@@ -24,7 +24,7 @@ set(GLM_ROOT "${CMAKE_SOURCE_DIR}/dependencies/glm")
 include_directories(${GLM_ROOT}/include)
 
 # Add executable
-add_executable(Jynx
+add_executable(Salette
             src/config.h
             src/config.cpp
             src/main.cpp
@@ -37,4 +37,4 @@ add_executable(Jynx
             )
 
 # Link libraries
-target_link_libraries(Jynx glfw OpenGL::GL)
+target_link_libraries(Salette glfw OpenGL::GL)

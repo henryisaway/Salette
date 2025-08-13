@@ -22,8 +22,8 @@ Salette is a custom general-purpose 2D/3D graphics engine designed for flexibili
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/henryisaway/jynx.git
-   cd jynx
+   git clone https://github.com/henryisaway/Salette.git
+   cd Salette
    ```
 
 2. Create a build directory:
