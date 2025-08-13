@@ -1,6 +1,6 @@
 #include "../../include/shader/OpenGLShaderLinker.h"
 
-namespace Vista {
+namespace Salette {
 
 std::unique_ptr<IShader> OpenGLShaderLinker::createShader(const std::string& vertexPath, const std::string& fragmentPath){
     return std::make_unique<OpenGLShader>(linkProgram(vertexPath, fragmentPath));
@@ -9,56 +9,51 @@ std::unique_ptr<IShader> OpenGLShaderLinker::createShader(const std::string& ver
 // This links all compiled shader modules together
 unsigned int OpenGLShaderLinker::linkProgram(const std::string &vertexFilepath, const std::string &fragmentFilepath){
     
-    // Packs vertex and fragment shaders together in a vector
     std::vector<unsigned int> modules;
     modules.push_back(compileShaderModule(vertexFilepath, GL_VERTEX_SHADER));
     modules.push_back(compileShaderModule(fragmentFilepath, GL_FRAGMENT_SHADER));
     
+    unsigned int shaderProgram = glCreateProgram();
     
-    unsigned int shader = glCreateProgram(); // Returns ID for the shader program
-    
-    // For each module in modules, attach the shader module in the program
     for(unsigned int shaderModule : modules){
-        glAttachShader(shader, shaderModule);
+        glAttachShader(shaderProgram, shaderModule);
     }
-    glLinkProgram(shader); // Link all modules into the program
+
+    glLinkProgram(shaderProgram);
     
     // Error handling
     int shaderLinkSuccessful;
-    glGetProgramiv(shader, GL_LINK_STATUS, &shaderLinkSuccessful);
+    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &shaderLinkSuccessful);
     if(!shaderLinkSuccessful){
         char errorLog[1024];
-        glGetProgramInfoLog(shader, 1024, NULL, errorLog);
+        glGetProgramInfoLog(shaderProgram, 1024, NULL, errorLog);
         CLIO_FATAL("Shader linking error: ", errorLog);
         exit(EXIT_FAILURE);
     }
-    
-    // Shaders aren't needed after linking, so they are all deleted
+
     for(unsigned int shaderModule : modules){
         glDeleteShader(shaderModule);
     }
     
-    return shader;
+    CLIO_DEBUG("OpenGL Shader Linker has finished shader compilation with ID ", shaderProgram);
+    return shaderProgram;
 }
 
-// This loads the shader module
 unsigned int OpenGLShaderLinker::compileShaderModule(const std::string &filepath, unsigned int moduleType){
-    std::ifstream file; // file object
-    std::stringstream bufferedLines; // object that stores multiple strings
+    std::ifstream file;
+    std::stringstream bufferedLines;
     std::string line;
     
     file.open(filepath);
     while(std::getline(file, line)){
-        bufferedLines << line << "\n"; // Store shader source code into stringstream object
+        bufferedLines << line << "\n";
     }
     
     std::string shaderSource = bufferedLines.str();
-    const char* shaderSourceC = shaderSource.c_str(); // Convert stringstream into a c-style string pointer.
+    const char* shaderSourceC = shaderSource.c_str();
     
-    bufferedLines.str(""); // Clears stringstream object
     file.close();
     
-    // Compiling shader source code
     unsigned int shaderModule = glCreateShader(moduleType);
     glShaderSource(shaderModule, 1, &shaderSourceC, NULL); // Input souce code
     glCompileShader(shaderModule);
