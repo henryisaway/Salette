@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(Vista)
+project(Salette)
 cmake_policy(SET CMP0072 NEW)
 
 # Set C++ standard
@@ -42,7 +42,7 @@ elseif(APPLE)
 endif()
 
 # Add executable
-add_executable(Vista
+add_executable(Salette
     src/core/includes.cpp
     main.cpp
     ${GLAD_ROOT}/src/glad.c
@@ -57,7 +57,7 @@ add_executable(Vista
     src/core/app.cpp
 )
 
-target_link_libraries(Vista
+target_link_libraries(Salette
     PRIVATE glfw OpenGL::GL ${PLATFORM_LIBS}
 )
 

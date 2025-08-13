@@ -3,7 +3,7 @@
 #include <includes.h>
 #include "IShader.h"
 
-namespace Vista {
+namespace Salette {
 
 class OpenGLShader : public IShader {
 public:
@@ -33,12 +33,9 @@ public:
     void setUniform(const std::string& name, const glm::mat4& value) override;
 
 private:
-    // Helper function to get the location of a uniform, with caching.
     GLint getUniformLocation(const std::string& name);
 
-private:
     GLuint m_ProgramId = 0;
     std::unordered_map<std::string, GLint> m_UniformLocationCache;
 };
-
-} // namespace Vista
+}

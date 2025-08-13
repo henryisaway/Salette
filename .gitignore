@@ -5,3 +5,4 @@ build
 designdoc.md
 icons
 logs
+legacy_CMakeLists.txt

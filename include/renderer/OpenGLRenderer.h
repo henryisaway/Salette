@@ -4,7 +4,7 @@
 
 // Refer to InterfaceRenderer.h for an explanation of each method.
 
-namespace Vista {
+namespace Salette {
 
 class OpenGLRenderer : public IRenderer {
 public:

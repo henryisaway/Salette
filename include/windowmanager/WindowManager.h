@@ -3,7 +3,7 @@
 #include "WindowHandle.h"
 #include "OpenGLWindowHandle.h"
 
-namespace Vista {
+namespace Salette {
 
 class WindowManager {
 public:

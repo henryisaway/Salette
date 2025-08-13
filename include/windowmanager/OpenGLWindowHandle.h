@@ -2,7 +2,7 @@
 #include <includes.h>
 #include "WindowHandle.h"
 
-namespace Vista {
+namespace Salette {
 
 class OpenGLWindowHandle : public WindowHandle{
 public:

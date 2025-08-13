@@ -1,6 +1,6 @@
 #include "../../include/windowmanager/OpenGLWindowHandle.h"
 
-namespace Vista {
+namespace Salette {
 
 OpenGLWindowHandle::OpenGLWindowHandle(int width, int height, const std::string& title, unsigned int id) : m_Width(width), m_Height(height), m_Title(title), m_id(id) {
 	// This creates the window proper;
@@ -68,22 +68,22 @@ void* OpenGLWindowHandle::getNativeHandle() const {
 }
 
 const std::string& OpenGLWindowHandle::getTitle() const {
-	CLIO_TRACE("Window (", m_id, ") called getTitle() with return ",  m_Title);
+	CLIO_DEBUG("Window (", m_id, ") called getTitle() with return ",  m_Title);
 	return m_Title;
 }
 
 const unsigned int OpenGLWindowHandle::getID() const {
-	CLIO_TRACE("Window (", m_id, ") called getID().");
+	CLIO_DEBUG("Window (", m_id, ") called getID().");
 	return m_id;
 }
 
 int OpenGLWindowHandle::getWidth() const {
-	CLIO_TRACE("Window (", m_id, ") called getWidth() with return ", m_Width);
+	CLIO_DEBUG("Window (", m_id, ") called getWidth() with return ", m_Width);
 	return m_Width;
 }
 
 int OpenGLWindowHandle::getHeight() const {
-	CLIO_TRACE("Window (", m_id, ") called getHeight() with return ", m_Height);
+	CLIO_DEBUG("Window (", m_id, ") called getHeight() with return ", m_Height);
 	return m_Height;
 }
 

@@ -17,6 +17,5 @@
 
 int main(){
 	Clio::Logger::get().setSeverityThreshold(Clio::Severity::DEBUG);
-	Vista::App::getInstance().run();
-	return 0;
+	Salette::App::getInstance().run();
 }

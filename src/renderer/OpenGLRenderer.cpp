@@ -1,7 +1,7 @@
 #include "../../include/renderer/OpenGLRenderer.h"
 
 
-namespace Vista {
+namespace Salette {
 // --- Basic Management ---
 
 void OpenGLRenderer::initialise() {
@@ -14,7 +14,7 @@ void OpenGLRenderer::shutdown() {
 }
 
 void OpenGLRenderer::beginFrame() {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT);
 }
 
 void OpenGLRenderer::endFrame() {
@@ -25,7 +25,6 @@ void OpenGLRenderer::endFrame() {
 
 
 // --- OpenGL Setup ---
-
 void OpenGLRenderer::loadGLFW() {
 	CLIO_INFO("Setting up GLFW...");
 	if(!glfwInit()){
@@ -54,6 +53,7 @@ void OpenGLRenderer::bindTarget(WindowHandle* window) {
                 glfwTerminate();
                 exit(-1);
             }
+
             CLIO_INFO("GLAD is ready!");
             glad_loaded = true;
         }

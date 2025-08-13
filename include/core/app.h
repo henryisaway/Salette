@@ -3,9 +3,10 @@
 #include "../events/inputHandler.h"
 #include "../factory/PrimitiveModelFactory.h"
 #include "../renderer/IRenderer.h"
+#include "../shader/IShader.h"
 #include "../windowmanager/WindowManager.h"
 
-namespace Vista {
+namespace Salette {
 
 class App{
 public:

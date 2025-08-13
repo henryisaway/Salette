@@ -1,7 +1,7 @@
 #pragma once
 #include <includes.h>
 
-namespace Vista {
+namespace Salette {
 
 class WindowHandle{
 public:

@@ -1,9 +1,10 @@
 #include "../../include/shader/OpenGLShader.h"
 
-namespace Vista {
+namespace Salette {
 
 OpenGLShader::OpenGLShader(GLuint programId) {
     this->m_ProgramId = programId;
+    CLIO_INFO("OpenGL Shader created with ID ", m_ProgramId);
 }
 
 OpenGLShader::~OpenGLShader() {
@@ -11,10 +12,12 @@ OpenGLShader::~OpenGLShader() {
 }
 
 void OpenGLShader::bind() {
+    CLIO_TRACE("Shader ", m_ProgramId, " was bound.");
     glUseProgram(m_ProgramId);
 }
 
 void OpenGLShader::unbind() {
+    CLIO_TRACE("Shader ", m_ProgramId, " was unbound.");
     glUseProgram(0);
 }
 

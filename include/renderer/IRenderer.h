@@ -2,7 +2,7 @@
 #include <includes.h>
 #include "../windowmanager/WindowHandle.h"
 
-namespace Vista {
+namespace Salette {
 
 class IRenderer {
 public:

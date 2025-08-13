@@ -1,6 +1,6 @@
 #include "../../include/windowmanager/WindowManager.h"
 
-namespace Vista {
+namespace Salette {
 
 WindowManager::WindowManager(){
     CLIO_INFO("Window Manager instance has been created.");
@@ -12,7 +12,7 @@ WindowManager& WindowManager::getInstance(){
 }
 
 WindowHandle* WindowManager::createWindow(int width, int height, const std::string& title){
-	    auto newWindow = std::make_unique<Vista::OpenGLWindowHandle>(width, height, title, windowID++);
+	    auto newWindow = std::make_unique<Salette::OpenGLWindowHandle>(width, height, title, windowID++);
     WindowHandle* newWindowPtr = newWindow.get();
 
 	m_Windows.push_back(std::move(newWindow));

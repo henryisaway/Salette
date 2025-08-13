@@ -4,7 +4,7 @@
 #include "IShaderLinker.h"
 #include "OpenGLShader.h"
 
-namespace Vista {
+namespace Salette {
 
 class OpenGLShaderLinker : public IShaderLinker {
 public:
