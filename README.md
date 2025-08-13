@@ -1,11 +1,11 @@
-Salette is a custom general-purpose 2D/3D graphics engine designed for flexibility, performance, and ease of use. Built on C++ with a (yet-to-come) high-level Lua API, Salette aims to provide tools for creating visual experiences, whether in gaming or other graphical applications.
+Salette is a custom general-purpose 2D/3D graphics engine designed for flexibility, performance, and ease of use. Built on C++ with a (yet-to-come) high-level C# C#, Salette aims to provide tools for creating visual experiences, whether in gaming or other graphical applications.
 
 > Note: Salette is a personal, non-profit and educational project being developed by me alone, and is currently under heavy development. The engine is far from feature complete and ETA for new features may change over time.
 
 ## Features
 
 - **Lightweight**: Good for fast rendering and efficient resource management.
-- **Flexible API**: A high-level Lua interface allows for easier scripting and rapid iteration (TBD).
+- **Flexible API**: A high-level C# interface allows for easier scripting and rapid iteration (TBD).
 - **Mod-Friendly Architecture**: Designed to facilitate modding in games, ensuring ease of use for both developers and end-users.
 - **Support for 2D and 3D Rendering**: Capable of rendering both 2D and 3D graphics.
 - **Custom Shaders**: Create stunning visuals with the ability to implement custom shaders (TBD).
@@ -22,7 +22,7 @@ Salette is a custom general-purpose 2D/3D graphics engine designed for flexibili
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/henryisaway/Salette.git
+   git clone --recurse-submodules https://github.com/henryisaway/Salette.git
    cd Salette
    ```
 
@@ -75,8 +75,8 @@ Please note that these are not hard deadlines. Features may be implemented ahead
   - Develop a modular asset manager for handling textures, models, and sounds.
 - **Custom Shaders**
   - Implement a system for end user to create and utilize custom shaders.
-- **Lua API Integration**
-  - Integration of the high-level Lua API for user scripting.
+- **C# API Integration**
+  - Integration of the high-level C# API for user scripting.
 
 ### Q4 2025: Advanced Features
 - **Advanced 2D Rendering Support**
