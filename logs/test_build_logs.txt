@@ -1,0 +1,55 @@
+[  1%] Generating xdg-shell-client-protocol.h
+[  3%] Generating fractional-scale-v1-client-protocol-code.h
+[  5%] Generating fractional-scale-v1-client-protocol.h
+[  7%] Generating idle-inhibit-unstable-v1-client-protocol-code.h
+[  9%] Generating idle-inhibit-unstable-v1-client-protocol.h
+[ 11%] Generating pointer-constraints-unstable-v1-client-protocol-code.h
+[ 13%] Generating pointer-constraints-unstable-v1-client-protocol.h
+[ 15%] Generating relative-pointer-unstable-v1-client-protocol-code.h
+[ 16%] Generating viewporter-client-protocol-code.h
+[ 18%] Generating relative-pointer-unstable-v1-client-protocol.h
+[ 20%] Generating viewporter-client-protocol.h
+[ 22%] Generating wayland-client-protocol-code.h
+[ 24%] Generating wayland-client-protocol.h
+[ 26%] Generating xdg-activation-v1-client-protocol-code.h
+[ 28%] Generating xdg-activation-v1-client-protocol.h
+[ 30%] Generating xdg-decoration-unstable-v1-client-protocol-code.h
+[ 32%] Generating xdg-decoration-unstable-v1-client-protocol.h
+[ 33%] Generating xdg-shell-client-protocol-code.h
+[ 37%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/context.c.o
+[ 37%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/init.c.o
+[ 39%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/input.c.o
+[ 41%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/monitor.c.o
+[ 43%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/platform.c.o
+[ 45%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o
+[ 47%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/window.c.o
+[ 49%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o
+[ 50%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o
+[ 52%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/null_init.c.o
+[ 54%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o
+[ 56%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/null_window.c.o
+[ 58%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o
+[ 60%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o
+[ 62%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o
+[ 64%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o
+[ 66%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o
+[ 67%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o
+[ 69%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o
+[ 71%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o
+[ 73%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o
+[ 75%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/wl_init.c.o
+[ 77%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/wl_monitor.c.o
+[ 79%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/wl_window.c.o
+[ 81%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o
+[ 83%] Building C object dependencies/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o
+[ 84%] Linking C static library libglfw3.a
+[ 84%] Built target glfw
+[ 86%] Building CXX object CMakeFiles/Tests.dir/src/core/includes.cpp.o
+[ 88%] Building CXX object CMakeFiles/Tests.dir/gtests/gtestmain.cpp.o
+[ 90%] Building C object CMakeFiles/Tests.dir/dependencies/glad/src/glad.c.o
+[ 92%] Building CXX object CMakeFiles/Tests.dir/src/windowmanager/OpenGLWindowHandle.cpp.o
+[ 94%] Building CXX object CMakeFiles/Tests.dir/src/windowmanager/WindowManager.cpp.o
+[ 96%] Building CXX object CMakeFiles/Tests.dir/gtests/windowmanager/WindowManagerTest.cpp.o
+[ 98%] Building CXX object CMakeFiles/Tests.dir/gtests/windowmanager/OpenGLWindowHandleTest.cpp.o
+[100%] Linking CXX executable Tests
+[100%] Built target Tests
