@@ -1,4 +1,4 @@
-Salette is a custom general-purpose 2D/3D graphics engine designed for flexibility, performance, and ease of use. Built on C++ with a (yet-to-come) high-level C# C#, Salette aims to provide tools for creating visual experiences, whether in gaming or other graphical applications.
+Salette is a custom general-purpose 2D/3D graphics engine designed for flexibility, performance, and ease of use. Built on C++ with a (yet-to-come) high-level C# API, Salette aims to provide tools for creating visual experiences, whether in gaming or other graphical applications.
 
 > Note: Salette is a personal, non-profit and educational project being developed by me alone, and is currently under heavy development. The engine is far from feature complete and ETA for new features may change over time.
 
